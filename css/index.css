@@ -1,5 +1,42 @@
 /************ 공통사항 *************/
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans&family=Overpass:wght@100;200;300;400;600&display=swap'); 
+/* 
+font-family: 'DM Serif Display', serif;
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Overpass', sans-serif;
+*/
+
+html, body {font-family: 'Noto Sans', sans-serif; font-size: 14px;}
 .wrapper {position: relative; max-width: 1200px; margin: auto;}
 
+/************ // .header-wrapper *************/
+.header-wrapper {}
+.top-wrapper {background-color: #293356; color: #f9f9f9; font-family: 'Overpass', sans-serif; padding: 1em 0; }
+.top-wrapper .top-wrap {display: flex; justify-content: flex-start; align-items: center;}
+.top-wrapper .top-wrap .icon-earth {margin-right: 0.5em;}
+.top-wrapper .top-wrap .icon-down {margin-right: 1.5em;}
+.top-wrapper .top-wrap .event {margin-left: auto; margin-right: 1em;}
+.top-wrapper .top-wrap .notice {font-weight: 100;}
 
-.top-wrapper {background-color: #293356; color: #f9f9f9;}
+
+/************ 반응형 *************/
+@media screen and (max-width: 1199px) {
+	.wrapper {padding: 0 1em;}
+	.top-wrapper .top-wrap {justify-content: center;}
+	.top-wrapper .top-wrap .icon-earth {display: none;}
+	.top-wrapper .top-wrap .icon-down {display: none;}
+	.top-wrapper .top-wrap .tel {display: none;}
+	.top-wrapper .top-wrap .event {margin-left: unset;}
+}
+
+@media screen and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 767px) {
+	
+}
+
+@media screen and (max-width: 575px) {
+	.top-wrapper .top-wrap {flex-direction: column;}
+}
