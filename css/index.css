@@ -6,7 +6,7 @@ font-family: 'Noto Sans', sans-serif;
 font-family: 'Overpass', sans-serif;
 */
 
-html, body {font-family: 'Noto Sans', sans-serif; font-size: 14px;}
+html, body {font-family: 'Noto Sans', sans-serif; font-size: 14px; line-height: 0.95;}
 .wrapper {position: relative; max-width: 1200px; margin: auto;}
 
 /************ // .header-wrapper *************/
@@ -17,6 +17,15 @@ html, body {font-family: 'Noto Sans', sans-serif; font-size: 14px;}
 .top-wrapper .top-wrap .icon-down {margin-right: 1.5em;}
 .top-wrapper .top-wrap .event {margin-left: auto; margin-right: 1em;}
 .top-wrapper .top-wrap .notice {font-weight: 100;}
+
+.trans-wrapper {position: absolute; top: 24px; color: #111; display: flex; 
+	background-color: #fff; padding: 0.5em 0;}
+.trans-wrapper > div:not(.line) {display: flex; align-items: center; padding: 0 1.5em;}
+.trans-wrapper > div:not(.line) > * {padding: 0 0.325em;}
+.trans-wrapper > div.line {width: 0; border-left: 1px solid #ccc;}
+.trans-wrapper .flag {width:1.125em; height: 1.125em; background-position: center; background-size: auto 100%; border-radius: 50%;}
+.trans-wrapper .bt-down {color: #444; cursor: pointer;}
+.trans-wrapper .bt-down:hover {color: #999;}
 
 
 /************ 반응형 *************/
