@@ -20,12 +20,18 @@ html, body {font-family: 'Noto Sans', sans-serif; font-size: 14px; line-height: 
 
 .trans-wrapper {position: absolute; top: 24px; color: #111; display: flex; 
 	background-color: #fff; padding: 0.5em 0; box-shadow: 0 .25em .5em rgba(0,0,0,0.3);}
-.trans-wrapper > div:not(.line) {display: flex; align-items: center; padding: 0 1.5em;}
+.trans-wrapper > div:not(.line) {display: flex; align-items: center; padding: 0 1.5em; position: relative;}
 .trans-wrapper > div:not(.line) > * {padding: 0 0.325em;}
 .trans-wrapper > div.line {width: 0; border-left: 1px solid #ccc;}
 .trans-wrapper .flag {width:1.125em; height: 1.125em; background-position: center; background-size: auto 100%; border-radius: 50%;}
 .trans-wrapper .bt-down {color: #444; cursor: pointer;}
 .trans-wrapper .bt-down:hover {color: #999;}
+
+.trans-wrapper > div:not(.line) > ul {width: 100%; position: absolute; background-color: #fff; top: 1.75em; left: 0; padding: 0.5em; text-align: center; box-shadow: 0 .25em .5em rgba(0,0,0,0.3);}
+.trans-wrapper > div:not(.line) > ul > li {padding: 0.5em; display: flex; justify-content: center; align-items: center;}
+.trans-wrapper > div:not(.line) > ul > li.title {font-size: 0.875em;}
+.trans-wrapper > div:not(.line) > ul > li > .flag {margin-right: 1em;}
+.trans-wrapper > div:not(.line) > ul > li > span.active {border-bottom: 1px solid #111;}
 
 
 /************ 반응형 *************/
