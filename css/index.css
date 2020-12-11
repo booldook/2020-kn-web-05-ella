@@ -14,11 +14,11 @@ html, body {font-family: 'Noto Sans', sans-serif; font-size: 14px; line-height: 
 .top-wrapper {background-color: #293356; color: #f9f9f9; font-family: 'Overpass', sans-serif; padding: 1em 0; }
 .top-wrapper .top-wrap {display: flex; justify-content: flex-start; align-items: center;}
 .top-wrapper .top-wrap .icon-earth {margin-right: 0.5em;}
-.top-wrapper .top-wrap .icon-down {margin-right: 1.5em;}
+.top-wrapper .top-wrap .icon-down {margin-right: 1.5em; cursor: pointer;}
 .top-wrapper .top-wrap .event {margin-left: auto; margin-right: 1em;}
 .top-wrapper .top-wrap .notice {font-weight: 100;}
 
-.trans-wrapper {position: absolute; top: 1.75em; color: #111; display: flex; user-select: none; 
+.trans-wrapper {position: absolute; top: 1.75em; color: #111; display: flex; user-select: none;
 	background-color: #fff; padding: 0.5em 0; box-shadow: 0 .25em .5em rgba(0,0,0,0.3);}
 .trans-wrapper > div:not(.line) {display: flex; align-items: center; padding: 0 1.5em; position: relative;}
 .trans-wrapper > div:not(.line) > * {padding: 0 0.325em;}
