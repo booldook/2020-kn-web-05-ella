@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,18 @@
 <body>
 	<button class="btn btn-primary" id="btGet">데이터 가져오기</button>
 	<script>
-
-		// 자기거를 쓰자 -> 02efdd64bdc14b279bc91d9247db4722
+		var url = 'https://api.openweathermap.org/data/2.5/weather';
+		var data = { 
+			id: 1835848, 
+			appid: '02efdd64bdc14b279bc91d9247db4722', 
+			units: 'metric' 
+		}
+		function onGet(result) {
+			console.log(result);
+		}
+		$("#btGet").click(function(){
+			$.get(url, data, onGet); 
+		});
 	</script>
 </body>
 </html>

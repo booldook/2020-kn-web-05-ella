@@ -1,7 +1,3 @@
 # AJAX란?
 ## Asynchronous Javascript And XML(Extention Markup Language)
-
-```js
-
-
-```
+## JSON(Javascript Object Notation)
