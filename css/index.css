@@ -11,6 +11,7 @@ html, body {font-family: 'Noto Sans', sans-serif; font-size: 14px; line-height: 
 a:link, a:visited, a:active, a:hover {color: inherit; text-decoration: none;}
 .w-100 {width: 100%;}
 .mw-100 {max-width: 100%;}
+.rel {position: relative;}
 
 /************ // .header-wrapper *************/
 .header-wrapper {}
@@ -40,7 +41,18 @@ a:link, a:visited, a:active, a:hover {color: inherit; text-decoration: none;}
 /************ // .logo-wrapper *************/
 .logo-wrapper {display: flex; align-items: center; padding: 1.25em 0;}
 .logo-wrapper .logo-wrap {margin-right: auto;}
-.logo-wrapper .bars {font-size: 2em; margin-right: 1em;}
+.logo-wrapper .bars {font-size: 2em; margin-right: 1em; cursor: pointer; display: none;}
+.logo-wrapper .link-wrap {display: flex; align-items: center;}
+.logo-wrapper .event {border: 1px solid #ba7a2d; color: #ba7a2d; padding: 0.5em 3em; 
+	text-align: center; line-height: 1.325; margin-right: 1.5em;}
+.logo-wrapper .event > :first-child {font-weight: bold; letter-spacing: 0.2em;}
+.logo-wrapper .a-login {margin-right: 0.5em;}
+.logo-wrapper .bt-login {font-size: 1.5em;}
+.logo-wrapper .link-mo-wrap {display: none;}
+.logo-wrapper .link-mo-wrap > a {font-size: 1.5em; margin-right: 1em;}
+.logo-wrapper .link-mo-wrap > a:hover {color: #2a3241;}
+.logo-wrapper .cart-cnt {background-color: #ba7a2d; color: #f9f9f9; font-size: 0.625em; 
+	position: absolute; bottom: -0.3em; left: 50%; transform: translateX(-50%); padding: 0.125em 0.25em;border-radius: 0.25em;}
 
 
 /************ 반응형 *************/
@@ -51,6 +63,11 @@ a:link, a:visited, a:active, a:hover {color: inherit; text-decoration: none;}
 	.top-wrapper .top-wrap .icon-down {display: none;}
 	.top-wrapper .top-wrap .tel {display: none;}
 	.top-wrapper .top-wrap .event {margin-left: unset;}
+
+	.logo-wrapper .logo-wrap {width: 50px;}
+	.logo-wrapper .bars {display: block;}
+	.logo-wrapper .link-wrap {display: none;}
+	.logo-wrapper .link-mo-wrap {display: block;}
 }
 
 @media screen and (max-width: 991px) {
