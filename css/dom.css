@@ -1,0 +1,2 @@
+.wrapper {max-width: 1200px; margin: auto; display: flex;}
+.wrapper .box {border: 1px solid #333; width: 30px; height: 30px; background-color: red;}
