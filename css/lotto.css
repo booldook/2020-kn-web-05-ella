@@ -1,0 +1,10 @@
+.wrapper {max-width: 575px; margin: auto;}
+.wrapper .title {margin: 1em 0; border-bottom: 2px solid #299fff; color: #60b7fd; line-height: 1.5; text-align: center;}
+.result-wrapper {display: flex;}
+.result-wrapper .result-wrap {width: 80%; border: 2px solid #299fff; border-radius: 0.5em; margin-right: 0.5em; padding: 1em; display: flex; justify-content: center;}
+.result-wrapper .number {width: 2em; height: 2em; font-size: 1.5em; color: #fff; text-align: center; border-radius: 50%; margin: 0 0.25em; line-height: 1.875em; text-shadow: 0 0 0.5em rgba(0,0,0,.5);}
+.result-wrapper .number.yellow {background-color: #ffbe0c;}
+.result-wrapper .number.blue {background-color: #30d6ff;}
+.result-wrapper .number.green {background-color: #43bd1e;}
+.result-wrapper .number.red {background-color: #ff2e2e;}
+.result-wrapper .number.grey {background-color: #a8a8a8;}
