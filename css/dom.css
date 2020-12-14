@@ -1,2 +1,3 @@
-.wrapper {max-width: 1200px; margin: auto; display: flex;}
-.wrapper .box {border: 1px solid #333; width: 30px; height: 30px; background-color: red;}
+.wrapper {max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap;}
+.wrapper .box {border: 1px solid #333; width: 30px; height: 30px; background-color: red; margin-right: -1px; margin-bottom: -1px; transition: all 1s;}
+.wrapper .box:hover {background-color: khaki;}
