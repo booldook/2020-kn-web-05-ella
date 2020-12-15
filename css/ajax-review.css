@@ -1,0 +1,13 @@
+.wrapper {max-width: 700px; margin: auto; text-align: center;}
+
+h1.title {margin: 1em auto; border-bottom: 6px double #999; color: #555; text-align: center; display: inline-block;}
+
+.show-wrapper {display: flex; justify-content: space-between;}
+.show-wrapper > .img-wrap {flex: 60% 0 0;}
+.show-wrapper > .info-wrap {flex: 40% 0 0; background-color: #eaeaea; padding: 3%;}
+.show-wrapper > .info-wrap > .summary {text-align: left; padding: 1em; background-color: #fff;}
+.show-wrapper > .info-wrap > .bt-search {margin: 1em 0;}
+
+.thumb-wrapper {height: 100px; display: flex; justify-content: center;}
+.thumb-wrapper > .thumb {height: 100%; padding: 10px 5px;}
+.thumb-wrapper > .thumb > img {height: 100%;}
