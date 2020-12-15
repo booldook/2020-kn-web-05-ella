@@ -12,6 +12,10 @@
  *? 다 만들면 booldook@gmail.com으로 폴더 전체를 압축하여 보낸다.
  * 보내는 제목 : [홍길동] 로또 숙제
  */
+
+var lotto = [];				// 로또 번호를 담을 배열
+var legacyLotto = [];	// 기존 로또 번호를 담을 배열
+
 function colorSel(n) {
 	if(n <= 10) return 'yellow';
 	else if(n <= 20) return 'blue';
@@ -21,7 +25,8 @@ function colorSel(n) {
 }
 
 function onLucky() {
-	var lotto = [];	// 로또 번호를 담을 배열
+	legacyLotto = lotto;
+	lotto = [];
 	var number;			// 추출한 번호를 담을 변수
 	var color;			// 생성될 공의 class를 담을 변수
 	while(lotto.length < 6) {	// 6개의 랜덤한 번호를 lotto에 넣는다.
@@ -38,6 +43,14 @@ function onLucky() {
 	// for(var i=0; i<lotto.length; i++) {
 	for(var i in lotto) {	// 공을 생성해서 화면에 그린다.
 		$(".result-wrap").append('<div class="number '+colorSel(lotto[i])+'">'+lotto[i]+'</div>');
+	}
+	if(legacyLotto.length > 0) {
+		html  = '<div class="history">';
+		for(var i in legacyLotto) {	// 공을 생성해서 화면에 그린다.
+			html += '<div class="number '+colorSel(legacyLotto[i])+'">'+legacyLotto[i]+'</div>';
+		}
+		html += '</div>';
+		$(".history-wrapper").prepend(html);
 	}
 }
 
