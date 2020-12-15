@@ -1,0 +1,29 @@
+[{
+	"id": 1,
+	"title": "MARC",
+	"summary": "Dinterdum Pretium De Condimentus",
+	"star": 4.9,
+	"salePrice": 139.00,
+	"src": "../img/pic1.jpg"
+}, {
+	"id": 2,
+	"title": "G-STAR",
+	"summary": "Dinterdum Pretium De Condimentus",
+	"star": 3.7,
+	"salePrice": 199.99,
+	"src": "../img/pic2.jpg"
+}, {
+	"id": 3,
+	"title": "CHANEL",
+	"summary": "Dinterdum Pretium De Condimentus",
+	"star": 2.8,
+	"salePrice": 192.99,
+	"src": "../img/pic3.jpg"
+}, {
+	"id": 4,
+	"title": "BURBERRY",
+	"summary": "Dinterdum Pretium De Condimentus",
+	"star": 3.2,
+	"salePrice": 299.00,
+	"src": "../img/pic4.jpg"
+}]

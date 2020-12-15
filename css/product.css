@@ -1,0 +1,8 @@
+.wrapper {max-width: 1200px; margin: auto;}
+.prd-wrapper {display: flex;}
+.prd-wrapper > .prd {flex: 25% 0 0; padding: 1%;}
+.prd-wrapper .title {display: flex; justify-content: space-between; padding: 1em 0; font-weight: bold;}
+.prd-wrapper .summary {padding: 0.5em 0;}
+.prd-wrapper .price {padding: 0.5em 0; font-weight: bold; font-size: 1.125em;}
+.prd-wrapper .star {color: #e79435;}
+.prd-wrapper .star.mask::after {width: 100%; height: 100%; content:''; display: block; background-color: darkmagenta;}
