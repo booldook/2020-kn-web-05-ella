@@ -40,53 +40,25 @@ function genLottoHtml(arr) {
 	return html;
 }
 
-/* function onLucky() {
-	legacyLotto = lotto;
-	lotto = [];
-	var number;			// 추출한 번호를 담을 변수
-	var color;			// 생성될 공의 class를 담을 변수
-	
-	// 1. 6개의 랜덤한 번호를 lotto에 넣는다.
-	while(lotto.length < 6) {
-		number = Math.floor(Math.random() * 45) + 1;
-		if(lotto.indexOf(number) == -1) lotto.push(number);
-	}
-
-	// 2. lotto를 오름차순으로 정렬한다.
-	// return a - b; // 오름차순
-	// return b - a; // 내림차순
-	lotto.sort(function(a, b) { return a - b; });
-	
-	// 3. 기존의 번호를 지운고, 공을 생성해서 화면에 그린다.
-	$(".result-wrap").empty().append(genLottoHtml(lotto));
-	
-	// 4. 기존 번호(legacyLotto)로 아래에 그린다.
-	if(legacyLotto.length > 0) {
-		html  = '<div class="history">';
-		html += genLottoHtml(legacyLotto);
-		html += '</div>';
-		$(".history-wrapper").prepend(html);
-	}
-} */
-
 function onLucky() {
 	legacyLotto = lotto;
 	lotto = [];
-	
-	var defaultLotto = [];
-	for(var i=1; i<=45; i++) defaultLotto.push(i);
-	while(lotto.length < 6) {
-
-	}
-
 	var number;			// 추출한 번호를 담을 변수
 	var color;			// 생성될 공의 class를 담을 변수
 	
 	// 1. 6개의 랜덤한 번호를 lotto에 넣는다.
-	while(lotto.length < 6) {
-		number = Math.floor(Math.random() * 45) + 1;
-		if(lotto.indexOf(number) == -1) lotto.push(number);
-	}
+	/**
+	 * A 알고리즘
+	 * while(lotto.length < 6) {
+	 * 	number = Math.floor(Math.random() * 45) + 1;
+	 * 	if(lotto.indexOf(number) == -1) lotto.push(number);
+	 * }
+	 */
+	// B 알고리즘
+	var defaultLotto = [];
+	for(var i=1; i<=45; i++) defaultLotto.push(i);
+	defaultLotto = _.shuffle(defaultLotto);
+	for(var i=0; i<6; i++) lotto.push(defaultLotto.pop());
 
 	// 2. lotto를 오름차순으로 정렬한다.
 	// return a - b; // 오름차순
