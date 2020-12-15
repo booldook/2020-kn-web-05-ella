@@ -12,13 +12,33 @@
  *? 다 만들면 booldook@gmail.com으로 폴더 전체를 압축하여 보낸다.
  * 보내는 제목 : [홍길동] 로또 숙제
  */
-
+function colorSel(n) {
+	if(n <= 10) return 'yellow';
+	else if(n <= 20) return 'blue';
+	else if(n <= 30) return 'red';
+	else if(n <= 40) return 'grey';
+	else return 'green';
+}
 
 function onLucky() {
-	var numbers = [];
-	var lotto = [];
-	for(var i=1; i<=45; i++) numbers.push(i);
+	var lotto = [];	// 로또 번호를 담을 배열
+	var number;			// 추출한 번호를 담을 변수
+	var color;			// 생성될 공의 class를 담을 변수
+	while(lotto.length < 6) {
+		number = Math.floor(Math.random() * 45) + 1;
+		if(lotto.indexOf(number) == -1) lotto.push(number);
+	}
+	lotto.sort(function(a, b) {
+		return a - b; // 오름차순
+		// return b - a; // 내림차순
+	});
+	
 	$(".result-wrap").empty();
+
+	// for(var i=0; i<lotto.length; i++) {
+	for(var i in lotto) {
+		$(".result-wrap").append('<div class="number '+colorSel(lotto[i])+'">'+lotto[i]+'</div>');
+	}
 }
 
 $("#btLucky").click(onLucky);
