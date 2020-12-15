@@ -24,19 +24,19 @@ function onLucky() {
 	var lotto = [];	// 로또 번호를 담을 배열
 	var number;			// 추출한 번호를 담을 변수
 	var color;			// 생성될 공의 class를 담을 변수
-	while(lotto.length < 6) {
+	while(lotto.length < 6) {	// 6개의 랜덤한 번호를 lotto에 넣는다.
 		number = Math.floor(Math.random() * 45) + 1;
 		if(lotto.indexOf(number) == -1) lotto.push(number);
 	}
-	lotto.sort(function(a, b) {
+	lotto.sort(function(a, b) {	// lotto를 오름차순으로 정렬한다.
 		return a - b; // 오름차순
 		// return b - a; // 내림차순
 	});
 	
-	$(".result-wrap").empty();
+	$(".result-wrap").empty();	// 기존의 번호를 지운다.
 
 	// for(var i=0; i<lotto.length; i++) {
-	for(var i in lotto) {
+	for(var i in lotto) {	// 공을 생성해서 화면에 그린다.
 		$(".result-wrap").append('<div class="number '+colorSel(lotto[i])+'">'+lotto[i]+'</div>');
 	}
 }
