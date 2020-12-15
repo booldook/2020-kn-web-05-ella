@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1, 
+		"title": "맛있는 체리", 
+		"summary": "영양가 높은 체리입니다.", 
+		"src": "../img/cherries.jpg"
+	}, {
+		"id": 2, 
+		"title": "방금 나온 크로와상", 
+		"summary": "버터 풍미 물씬 풍기는 크로와상입니다.", 
+		"src": "../img/croissant.jpg"
+	}, {
+		"id": 3, 
+		"title": "톡톡 터지는 아이스크림", 
+		"summary": "톡톡 터지는 재미가 있는 아이스크림입니다.", 
+		"src": "../img/popsicle.jpg"
+	}, {
+		"id": 4, 
+		"title": "입맛 자극 훈제연어", 
+		"summary": "참숫으로 훈연한 훈제연어입니다.", 
+		"src": "../img/salmon.jpg"
+	}, {
+		"id": 5, 
+		"title": "영양가 높은 샌드위치", 
+		"summary": "치즈와 햄이 어우러진 샌드위치입니다.", 
+		"src": "../img/sandwich.jpg"
+	}, {
+		"id": 6, 
+		"title": "직화 스테이크", 
+		"summary": "미디엄레어로 주방장이 최선을 다한 스테이크입니다.", 
+		"src": "../img/steak.jpg"
+	}, {
+		"id": 7, 
+		"title": "프랑스산 보르도와인", 
+		"summary": "보르도 지방의 엄선된 특산 와인입니다.", 
+		"src": "../img/wine.jpg"
+	}
+]
