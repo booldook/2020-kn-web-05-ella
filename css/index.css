@@ -95,10 +95,11 @@ a:link, a:visited, a:active, a:hover {color: inherit; text-decoration: none;}
 .slide-wrapper .slide-container {width: 100%; display: flex; position: relative;}
 .slide-wrapper .slide {flex: 23% 0 0; margin: 0 1%; display: flex; justify-content: space-between;}
 .slide-wrapper .slide > .img-wrap {flex: 40% 0 0;}
-.slide-wrapper .slide > .content-wrap {flex: 55% 0 0;}
+.slide-wrapper .slide > .content-wrap {flex: 55% 0 0; background-color: #eaeaea;}
 .slide-wrapper .slide > .content-wrap > .title {font-weight: bold; padding: 1em 0;}
 .slide-wrapper .slide > .content-wrap > .summary {line-height: 1.5em; color: #555;}
-.slide-wrapper .slide > .content-wrap > .star {padding: 0.5em 0;}
+.slide-wrapper .slide > .content-wrap > .star {padding: 0.5em 0; display: inline-block; position: relative; overflow: hidden;}
+.slide-wrapper .slide > .content-wrap > .star > .mask {width: 100%; height: 100%; background-color: #eaeaea; position: absolute; top: 0; left: 0;}
 .slide-wrapper .slide > .content-wrap > .star > i { color :#aaa;}
 .slide-wrapper .slide > .content-wrap > .star > i.active {color: #ba7a2d;}
 .slide-wrapper .slide > .content-wrap > .content {color: #aaa;}

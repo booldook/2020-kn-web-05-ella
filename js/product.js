@@ -19,11 +19,16 @@ function onGet(r) {
 		html += '		</h3>';
 		html += '		<p class="summary">'+r[i].summary+'</p>';
 		html += '		<div class="price">'+r[i].salePrice+'</div>';
-		html += '		<div class="star-wrap"></div>';
+		html += '		<div class="star-wrap">';
+		for(var j=0; j<5; j++)	html += '<i class="star fa fa-star"></i>';
+		html += '<div class="mask"></div>';
+		html += '		</div>';
 		html += '	</div>';
 		html += '</li>';
-		console.log( genStar(r[i].star) );
-		$(html).appendTo(".wrapper > .prd-wrapper").find(".star-wrap").html(genStar(r[i].star));
+		$(html)
+		.appendTo(".wrapper > .prd-wrapper")
+		.find(".star-wrap > .mask")
+		.css("transform", "translateX("+(r[i].star * 20)+"%)");
 	}
 }
 $.get('../json/products.json', onGet);
