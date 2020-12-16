@@ -1,15 +1,20 @@
-.wrapper-sm {max-width: 1100px; margin: auto;}
+
+.wrapper-md {max-width: 1100px; margin: auto;}
 .wrapper {max-width: 1000px; margin: auto;}
 .w-100 {width: 100%;}
 
-.booldook-slide {}
+.booldook-slide {position: relative;}
 .booldook-slide > .slide-stage {overflow: hidden; border: 1px solid red;}
 .booldook-slide > .slide-stage > .slide-wrapper {width: 100%; position: relative; border: 1px solid blue; display: flex;}
 .booldook-slide > .slide-stage > .slide-wrapper > .slide {flex-shrink: 0; flex-grow: 0; border: 1px solid green; position: relative; left: -100%;}
 
-.booldook-slide > .bt-prev {}
-.booldook-slide > .bt-next {}
-.booldook-slide > .pager-wrapper {}
+.booldook-slide > .bt-slide {font-size: 5em; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; opacity: .3; line-height: 0.95; transition: all 0.5s; user-select: none;}
+.booldook-slide > .bt-slide:hover {opacity: .8;}
+.booldook-slide > .bt-prev {left: 0;}
+.booldook-slide > .bt-next {right: 0;}
+.booldook-slide > .pager-wrapper {width: 100%; position: absolute; display: flex; justify-content: center; padding: 0.5em 0;}
+.booldook-slide > .pager-wrapper > .pager {color: red; opacity: .3; cursor: pointer; user-select: none;}
+.booldook-slide > .pager-wrapper > .pager.active {opacity: .8;}
 
 
 @media screen and (max-width: 1199px) {

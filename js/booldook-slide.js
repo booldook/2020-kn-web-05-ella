@@ -1,17 +1,18 @@
 /**
  *! 프로그램 세팅값
  */
-var standard = '.booldook-slide';
-var stageDefault = 5;	// 스테이지에 보여질 개수 기준값
+var container = '.booldook-slide';
+var stageDefault = 5;	// 스테이지에 보여질 개수 기준값(PC)
+var moveCnt = 1;			// 한번에 움직여 지는 슬라이드 개수
 
 
 /**
  *! 전역변수
  */
-var $container = $(standard);
-var $stage = $(standard).find('.slide-stage');
-var $wrapper = $(standard).find('.slide-wrapper');
-var $slide = $(standard).find('.slide');
+var $container = $(container);
+var $stage = $(container).find('.slide-stage');
+var $wrapper = $(container).find('.slide-wrapper');
+var $slide = $(container).find('.slide');
 var slideCnt = $slide.length;	// 슬라이드의 총 개수 length
 var slideLast = slideCnt - 1; // 슬라이드의 마지막 index 
 var slideWid;	// 슬라이드의 width
@@ -45,7 +46,6 @@ function onResize() {
 	else if(wid < 768) stageCnt = (stageDefault - 3 < 1) ? 1 : stageDefault - 3;
 	else if(wid < 992) stageCnt = (stageDefault - 2 < 1) ? 1 : stageDefault - 2;
 	else if(wid < 1200) stageCnt = (stageDefault - 1 < 1) ? 1 : stageDefault - 1;
-
 	slideWid = 100 / stageCnt;
 	console.log(stageCnt, slideWid);
 	init();
