@@ -1,10 +1,11 @@
 .wrapper-sm {max-width: 1100px; margin: auto;}
 .wrapper {max-width: 1000px; margin: auto;}
+.w-100 {width: 100%;}
 
 .booldook-slide {}
-.booldook-slide > .slide-stage {}
-.booldook-slide > .slide-stage > .slide-wrapper {}
-.booldook-slide > .slide-stage > .slide-wrapper > .slide {}
+.booldook-slide > .slide-stage {/* overflow: hidden; */ border: 1px solid red;}
+.booldook-slide > .slide-stage > .slide-wrapper {width: 100%; position: relative; border: 1px solid blue; display: flex;}
+.booldook-slide > .slide-stage > .slide-wrapper > .slide {flex: 25% 0 0; border: 1px solid green;}
 
 .booldook-slide > .bt-prev {}
 .booldook-slide > .bt-next {}
