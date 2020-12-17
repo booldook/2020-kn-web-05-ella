@@ -13,7 +13,7 @@ $.get('../json/new-products.json', onNewProducts); // new releases 상품 가져
 /********* 이벤트콜백 **********/
 function onNewProducts(r) {
 	for(var i=0, html='', $slide; i<r.length; i++) {
-		html  = '<div class="slide">';
+		html  = '<div class="slide swiper-slide">';
 		html += '<div class="img-wrap">';
 		html += '<img src="'+r[i].src+'" alt="상품" class="w-100">';
 		html += '</div>';
@@ -32,10 +32,18 @@ function onNewProducts(r) {
 		html += '<div class="price-sale">$'+r[i].salePrice+'</div>';
 		html += '</div>';
 		html += '</div>';
-		$slide = $(html).appendTo(".navi-new .slide-container");
+		$slide = $(html).appendTo(".navi-new .swiper-wrapper");
 		if(Number(r[i].star) > 0) $slide.find(".star > i").addClass("active");
 		$slide.find(".mask").css("left", r[i].star * 20 + "%");
 	}
+	var swiper = new Swiper('#newSlide .swiper-container', {
+		slidesPerView: 4,
+		loop: true,
+		navigation: {
+			nextEl: '#newSlide .bt-next',
+			prevEl: '#newSlide .bt-prev',
+		},
+	});
 }
 function onLangChg() {
 	$(".trans-wrapper").stop().slideToggle(200);
