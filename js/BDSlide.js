@@ -10,8 +10,8 @@
 */
 
 function BDSlide(obj) {
+	var o = this;
 	this.$container = $(obj.container || '#booldookSlide');
-	console.log(this.$container);
 	this.$stage = this.$container.find('.slide-stage');
 	this.$wrapper = this.$container.find('.slide-wrapper');
 	this.$slide = this.$container.find('.slide');
@@ -33,6 +33,7 @@ function BDSlide(obj) {
 	this.now = 0; // 기준값
 	this.direction = 1; // 1: 오른쪽으로 이동(Prev) / -1: 왼쪽으로 이동(Next)
 	this.target;	// Animation($wrapper)될 left값
+	
 
 	
 
@@ -49,19 +50,20 @@ function BDSlide(obj) {
 	}.bind(this);
 
 	BDSlide.prototype.onResize = function(e) {
+		// console.log(o.$wrapper);
 		var wid = $(window).width();	//브라우저의 width
-		this.stageView = this.stageViewDefault;
-		if(wid < 576) this.stageView = 1;
-		else if(wid < 768) this.stageView = this.stageViewDefault < 2 ? this.stageViewDefault : 2;
-		else if(wid < 992) this.stageView = this.stageViewDefault < 3 ? this.stageViewDefault : 3;
-		else if(wid < 1200) this.stageView = this.stageViewDefault < 4 ? this.stageViewDefault : 4;
-		this.slideWid = 100 / this.stageView;
-		this.init();
-	}.bind(this);
+		o.stageView = o.stageViewDefault;
+		if(wid < 576) o.stageView = 1;
+		else if(wid < 768) o.stageView = o.stageViewDefault < 2 ? obj.stageViewDefault : 2;
+		else if(wid < 992) o.stageView = o.stageViewDefault < 3 ? o.stageViewDefault : 3;
+		else if(wid < 1200) o.stageView = o.stageViewDefault < 4 ? o.stageViewDefault : 4;
+		o.slideWid = 100 / o.stageView;
+		o.init();
+	}
 
 	BDSlide.prototype.init = function () {
-		// console.log(this.$wrapper);
-		this.$wrapper.empty().css("left", 0);
+		// console.log(o);
+		o.$wrapper.empty().css("left", 0);
 		this.$pagerWrapper.find('.pager').removeClass('active').eq(this.now).addClass('active');
 		this.$slide.eq(this.now).clone().appendTo(this.$wrapper).css("width", this.slideWid+"%");
 		for(var i=0, my, prev=this.now; i<this.stageView; i++) {
@@ -78,10 +80,11 @@ function BDSlide(obj) {
 		this.$wrapper.stop().animate({"left": this.target}, this.speed, this.init);
 	}
 
-	this.$btPrev.click(this.onPrev);
-	this.$btNext.click(this.onNext);
-	$(window).resize(this.onResize).trigger('resize');
-
+	obj.$btPrev.click(obj.onPrev);
+	obj.$btNext.click(obj.onNext);
+	$(window).resize(obj.onResize).trigger('resize');
+	startInit(this);
+	
 	return this;
 }
 
