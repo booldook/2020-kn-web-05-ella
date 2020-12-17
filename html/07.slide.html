@@ -40,6 +40,40 @@
 		<div class="bt-slide bt-next"></div>
 		<div class="pager-wrapper"></div>
 	</div>
-	<script src="../js/booldook-slide.js"></script>
+	<div class="booldook-slide wrapper-md" id="mySlide2">
+		<div class="slide-stage wrapper">
+			<div class="slide-wrapper">
+				<div class="slide">
+					<img src="../img/cherries.jpg" alt="슬라이드" class="w-100">
+				</div>
+				<div class="slide">
+					<img src="../img/popsicle.jpg" alt="슬라이드" class="w-100">
+				</div>
+				<div class="slide">
+					<img src="../img/salmon.jpg" alt="슬라이드" class="w-100">
+				</div>
+				<div class="slide">
+					<img src="../img/steak.jpg" alt="슬라이드" class="w-100">
+				</div>
+				<div class="slide">
+					<img src="../img/croissant.jpg" alt="슬라이드" class="w-100">
+				</div>
+				<div class="slide">
+					<img src="../img/wine.jpg" alt="슬라이드" class="w-100">
+				</div>
+				<div class="slide">
+					<img src="../img/sandwich.jpg" alt="슬라이드" class="w-100">
+				</div>
+			</div>
+		</div>
+		<div class="bt-slide bt-prev"></div>
+		<div class="bt-slide bt-next"></div>
+		<div class="pager-wrapper"></div>
+	</div>
+	<script src="../js/BDSlide.js"></script>
+	<script>
+		var mySlide = new BDSlide({ container: '#mySlide' });
+		var mySlide2 = new BDSlide({ container: '#mySlide2', speed: 1000, stageViewDefault:10 });
+	</script>
 </body>
 </html>
