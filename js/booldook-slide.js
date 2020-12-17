@@ -1,9 +1,9 @@
 /**
  *! 프로그램 세팅값
  */
-var container = '.booldook-slide';
+var container = '#mySlide';
 var stageViewDefault = 4;	// 스테이지에 보여질 개수 기준값(PC)
-var moveCnt = 1; // 한번에 움직여 지는 슬라이드 개수
+var moveCnt = 1; // 한번에 움직여 지는 슬라이드 개수 // ? 아직 미구현
 var speed = 300;
 
 
@@ -17,6 +17,10 @@ var $slide = $container.find('.slide');
 var $btPrev = $container.find('.bt-prev');
 var $btNext = $container.find('.bt-next');
 var $pagerWrapper = $container.find('.pager-wrapper');
+for(var i=0; i<$slide.length; i++)
+	$('<i class="pager"></i>').appendTo($pagerWrapper);
+var $pager = $container.find('.pager');
+
 var slideCnt = $slide.length;	// 슬라이드의 총 개수 length
 var slideLast = slideCnt - 1; // 슬라이드의 마지막 index 
 var slideWid;	// 반응형 - 슬라이드의 width
@@ -40,7 +44,6 @@ function init() {
 		prev = my = (prev == slideLast) ? 0 : prev + 1;
 		$slide.eq(my).clone().appendTo($wrapper).css("width", slideWid+"%");
 	}
-
 }
 
 function slideAni() {
@@ -51,7 +54,7 @@ function slideAni() {
  *! 이벤트 콜백
  */
 function onResize() {
-	var wid = $(this).outerWidth();
+	var wid = $(this).width();	//브라우저의 width
 	stageView = stageViewDefault;
 	if(wid < 576) stageView = 1;
 	else if(wid < 768) stageView = stageViewDefault < 2 ? stageViewDefault : 2;
@@ -93,8 +96,7 @@ function onPager() {
  */
 $btPrev.click(onPrev);
 $btNext.click(onNext);
-for(var i=0; i<slideCnt; i++)
-	$('<i class="pager"></i>').appendTo($pagerWrapper).click(onPager);
+// $pager.click(onPager);
 
 $(window).resize(onResize).trigger('resize');
 

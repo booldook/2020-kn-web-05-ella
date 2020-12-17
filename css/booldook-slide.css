@@ -4,9 +4,9 @@
 .w-100 {width: 100%;}
 
 .booldook-slide {position: relative;}
-.booldook-slide > .slide-stage {/* overflow: hidden; */ border: 2px solid red;}
-.booldook-slide > .slide-stage > .slide-wrapper {width: 100%; position: relative; display: flex;}
-.booldook-slide > .slide-stage > .slide-wrapper > .slide {flex-shrink: 0; flex-grow: 0; position: relative; left: -100%;}
+.booldook-slide > .slide-stage {overflow: hidden; /* border: 2px solid red; */}
+.booldook-slide > .slide-stage > .slide-wrapper {width: 100%; position: relative; display: flex; left: 0;}
+.booldook-slide > .slide-stage > .slide-wrapper > .slide {flex-shrink: 0; flex-grow: 0; position: relative; left: -100%; padding: 1%;}
 
 .booldook-slide > .bt-slide {color: rgba(0,0,0,0.3); font-size: 5em; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; line-height: 0.95; transition: all 0.5s; user-select: none; text-shadow: 0 0 0.15em rgba(255,255,255,0.5);}
 .booldook-slide > .bt-slide:hover {color: rgba(0,0,0,0.8);}

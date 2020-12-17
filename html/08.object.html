@@ -1,0 +1,98 @@
+<script>
+/** 
+ * 자바스크립트의 객체
+ * 1. BuiltIn 객체 - 내장객체
+ * 	- Window(Global), Number, String, Date, Math, Array, Object
+ * 	- 특징: 객체들이 가지고 있는 함수(메서드)를 학습해야 한다.
+ * 2. Literal 객체 - 객체 
+ * 	- var obj = { firstName: "길동", lastName: "홍" }
+ * 	- 특징: 변수명 시작을 소문자로
+ * 	- 특징: 데이터를 저장할 때 많이 쓴다.
+ * 3. Constructor 객체 - 생성자 객체 
+ *  - 특징: 변수명 시작을 대문자로
+ * 	- 특징: 리터럴 객체를 인스턴스화(복제) 하기 위해 많이 쓴다.
+ * 	- 특징: 생성자 객체는 new 연산자를 통해서 리터럴 객체를 만들 수 있다.
+ *  - 특징: 객체의 prototype은 메서드다.
+*/
+
+// 1. 내장객체를 조금만 알아보자
+var arr = new Array(1, 2, 3, 4, 5);
+var last = arr.pop();
+console.log(arr, last);
+
+var arr = [1, 2, 3, 4, 5];
+var first = arr.shift();
+console.log(arr, first);
+
+// console.log(123.456.toFixed(2));
+var a = 10.2345;
+console.log(a);
+
+// 2. Literal 객체
+var myCar = {
+	name: "붕붕이",
+	brand: "Hyundai",
+	model: "Sonata",
+	color: "white",
+	park: function (){
+		// 주차기능
+		console.log(this.name + '을(를) 주차했습니다.');
+	},
+	start: function (){
+		// 시동기능
+		console.log(this.name + '을(를) 시동을 켰습니다.');
+	},
+	drive: function (){
+		// 주행기능
+		console.log(this.name + '을(를) 움직였습니다.');
+	},
+}
+
+var myCar2 = {
+	name: "붕붕이2",
+	brand: "Hyundai",
+	model: "Sonata",
+	color: "black",
+	park: function (){
+		// 주차기능
+		console.log(this.name + '을(를) 주차했습니다.');
+	},
+	start: function (){
+		// 시동기능
+		console.log(this.name + '을(를) 시동을 켰습니다.');
+	},
+	drive: function (){
+		// 주행기능
+		console.log(this.name + '을(를) 움직였습니다.');
+	},
+}
+
+myCar.drive();
+myCar2.drive();
+
+
+// 3. Constructor 객체를 알아보자
+function Car(name, brand, model) {
+	this.name = name;
+	this.brand = brand;
+	this.model = model;
+	return this;
+}
+Car.prototype.park = function() {
+	console.log(this.name + '을(를) 주차했습니다.');
+}
+Car.prototype.drive = function() {
+	console.log(this.name + '을(를) 움직였습니다.');
+}
+Car.prototype.start = function() {
+	console.log(this.name + '을(를) 시동을 켰습니다.');
+}
+
+console.clear();
+var car = new Car('붕붕이', '현대', '소나타');
+var car2 = new Car('붕붕삼', '기아', 'k9');
+console.log(car.drive());
+console.log(car2.drive());
+
+console.log(new Number());
+</script>
