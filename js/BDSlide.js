@@ -39,17 +39,16 @@ function BDSlide(obj) {
 		this.target = this.slideWid * this.moveCnt + "%";
 		this.now = this.now == 0 ? this.slideLast : this.now - 1;
 		this.slideAni();
-	}.bind(this);
+	}
 
 	BDSlide.prototype.onNext = function(e) {
 		this.target = -this.slideWid * this.moveCnt + "%";
 		this.now = this.now == this.slideLast ? 0 : this.now + 1;
 		this.slideAni();
-	}.bind(this);
+	}
 
 	BDSlide.prototype.onResize = function(e) {
 		var wid = $(window).width();	//브라우저의 width
-		console.log(e);
 		this.stageView = this.stageViewDefault;
 		if(wid < 576) this.stageView = 1;
 		else if(wid < 768) this.stageView = this.stageViewDefault < 2 ? this.stageViewDefault : 2;
@@ -57,10 +56,10 @@ function BDSlide(obj) {
 		else if(wid < 1200) this.stageView = this.stageViewDefault < 4 ? this.stageViewDefault : 4;
 		this.slideWid = 100 / this.stageView;
 		this.init();
-	}.bind(this);
+	}
 
 	BDSlide.prototype.init = function () {
-		console.log(this.$wrapper);
+		console.log(this);
 		this.$wrapper.empty().css("left", 0);
 		this.$pagerWrapper.find('.pager').removeClass('active').eq(this.now).addClass('active');
 		this.$slide.eq(this.now).clone().appendTo(this.$wrapper).css("width", this.slideWid+"%");
@@ -72,16 +71,15 @@ function BDSlide(obj) {
 			prev = my = (prev == this.slideLast) ? 0 : prev + 1;
 			this.$slide.eq(my).clone().appendTo(this.$wrapper).css("width", this.slideWid+"%");
 		}
-	}.bind(this);
-
-	BDSlide.prototype.slideAni = function() {
-		this.$wrapper.stop().animate({"left": this.target}, this.speed, this.init);
 	}
 
-	this.$btPrev.click(this.onPrev);
-	this.$btNext.click(this.onNext);
-	
-	$(document).resize(this.onResize).trigger('resize');
+	BDSlide.prototype.slideAni = function() {
+		this.$wrapper.stop().animate({"left": this.target}, this.speed, this.init.bind(this));
+	}
+
+	this.$btPrev.click(this.onPrev.bind(this));
+	this.$btNext.click(this.onNext.bind(this));
+	$(window).resize(this.onResize.bind(this)).trigger('resize');
 	return this;
 }
 
