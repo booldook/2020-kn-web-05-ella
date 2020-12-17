@@ -72,10 +72,10 @@ myCar2.drive();
 
 
 // 3. Constructor 객체를 알아보자
-function Car(name, brand, model) {
-	this.name = name;
-	this.brand = brand;
-	this.model = model;
+function Car(obj) {
+	this.name = obj.name;
+	this.brand = obj.brand;
+	this.model = obj.model;
 	return this;
 }
 Car.prototype.park = function() {
@@ -89,8 +89,8 @@ Car.prototype.start = function() {
 }
 
 console.clear();
-var car = new Car('붕붕이', '현대', '소나타');
-var car2 = new Car('붕붕삼', '기아', 'k9');
+var car = new Car({name: '붕붕이', brand: '현대', model: '소나타'});
+var car2 = new Car({name: '붕붕삼', brand: '기아', model: 'k9'});
 console.log(car.drive());
 console.log(car2.drive());
 
