@@ -76,17 +76,18 @@ function Car(obj) {
 	this.name = obj.name;
 	this.brand = obj.brand;
 	this.model = obj.model;
+	Car.prototype.park = function() {
+		console.log(this.name + '을(를) 주차했습니다.');
+	}
+	Car.prototype.drive = function() {
+		console.log(this.name + '을(를) 움직였습니다.');
+	}
+	Car.prototype.start = function() {
+		console.log(this.name + '을(를) 시동을 켰습니다.');
+	}
 	return this;
 }
-Car.prototype.park = function() {
-	console.log(this.name + '을(를) 주차했습니다.');
-}
-Car.prototype.drive = function() {
-	console.log(this.name + '을(를) 움직였습니다.');
-}
-Car.prototype.start = function() {
-	console.log(this.name + '을(를) 시동을 켰습니다.');
-}
+
 
 console.clear();
 var car = new Car({name: '붕붕이', brand: '현대', model: '소나타'});

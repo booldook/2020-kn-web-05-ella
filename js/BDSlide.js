@@ -9,8 +9,9 @@
 *	}
 */
 
-function BDSlide(obj) {
-	this.$container = $(obj.container || '#booldookSlide');
+function BDSlide(container, obj) {
+	this.obj = obj || {};
+	this.$container = $(container);
 	this.$stage = this.$container.find('.slide-stage');
 	this.$wrapper = this.$container.find('.slide-wrapper');
 	this.$slide = this.$container.find('.slide');
@@ -21,9 +22,9 @@ function BDSlide(obj) {
 	$('<i class="pager"></i>').appendTo(this.$pagerWrapper);
 	this.$pager = this.$container.find('.pager');
 	
-	this.speed = obj.speed || 300;
-	this.stageViewDefault = obj.stageViewDefault || 4;
-	this.moveCnt = obj.moveCnt || 1;
+	this.speed = this.obj.speed || 300;
+	this.stageViewDefault = this.obj.stageViewDefault || 4;
+	this.moveCnt = this.obj.moveCnt || 1;
 
 	this.slideCnt = this.$slide.length;	// 슬라이드의 총 개수 length
 	this.slideLast = this.slideCnt - 1; // 슬라이드의 마지막 index 
@@ -36,6 +37,7 @@ function BDSlide(obj) {
 	
 
 	BDSlide.prototype.onPrev = function(e) {
+		console.log(this);
 		this.target = this.slideWid * this.moveCnt + "%";
 		this.now = this.now == 0 ? this.slideLast : this.now - 1;
 		this.slideAni();
@@ -59,7 +61,6 @@ function BDSlide(obj) {
 	}
 
 	BDSlide.prototype.init = function () {
-		console.log(this);
 		this.$wrapper.empty().css("left", 0);
 		this.$pagerWrapper.find('.pager').removeClass('active').eq(this.now).addClass('active');
 		this.$slide.eq(this.now).clone().appendTo(this.$wrapper).css("width", this.slideWid+"%");
@@ -74,7 +75,8 @@ function BDSlide(obj) {
 	}
 
 	BDSlide.prototype.slideAni = function() {
-		this.$wrapper.stop().animate({"left": this.target}, this.speed, this.init.bind(this));
+		this.$wrapper.stop()
+		.animate({"left": this.target}, this.speed, this.init.bind(this));
 	}
 
 	this.$btPrev.click(this.onPrev.bind(this));
