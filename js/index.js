@@ -30,6 +30,7 @@ $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
 $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
 $.get('../json/navi-new.json', onNaviNew);	// new release 생성
 $.get('../json/navi-best.json', onNaviBest);	// best sellers 생성
+$.get('../json/navi-sales.json', onNaviSales); // sales 생성
 $.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
 
 $(".navi-wrapper .navi").mouseenter(onNaviEnter);
@@ -64,6 +65,25 @@ function onNaviBest(r) {
 		else 
 			html = '<li><a href="#" class="active">'+r.alphabet[i].name+'</a></li>';
 		$(".navi.navi-best").find('.alphabet-wrap').append(html);
+	}
+}
+
+function onNaviSales(r) {
+	$(".navi.navi-sales").prepend(createNavi(r));
+	for(var i=0; i<r.brands.length; i++) {
+		html  = '<div class="brand-wrap">';
+		html += '<div class="img-wrap" style="background-image: url('+r.brands[i].src+'); order: '+i%2+'">';
+		html += '</div>';
+		html += '<ul class="brand-link">';
+		html += '<li class="sub-navi bold">'+r.brands[i].company+'</li>';
+		for(var j=0; j<r.brands[i].brand.length; j++) {
+			html += '<li class="sub-navi hover-line">';
+			html += '<a href="'+r.brands[i].brand[j].link+'">'+r.brands[i].brand[j].name+'</a>';
+			html += '</li>';
+		}
+		html += '</ul>';
+		html += '</div>';
+		$(".navi.navi-sales").find('.sales-wrapper').append(html);
 	}
 }
 
