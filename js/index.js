@@ -39,6 +39,9 @@ function onNewProducts(r) {
 	var swiper = new Swiper('#newSlide .swiper-container', {
 		slidesPerView: 4,
 		loop: true,
+		autoplay: {
+			delay: 5000,
+		},
 		navigation: {
 			nextEl: '#newSlide .bt-next',
 			prevEl: '#newSlide .bt-prev',
