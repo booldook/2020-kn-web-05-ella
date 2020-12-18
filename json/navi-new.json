@@ -3,7 +3,7 @@
 	"link": "#",
 	"icon": "fa fa-plane-arrival",
 	"depth2": [
-		{ "name": "What’s New", "link": "#" },
+		{ "name": "What’s New", "link": "#", "depth3":[]},
 		{ "name": "Best Selling", "link": "#" },
 		{ "name": "Top Rated", "link": "#" },
 		{ "name": "Most Popular", "link": "#" },

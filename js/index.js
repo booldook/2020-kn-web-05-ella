@@ -14,12 +14,27 @@ $.get('../json/new-products.json', onNewProducts); // new releases 상품 가져
 
 /********* 이벤트콜백 **********/
 function onNaviNew(r) {
-	var html, i;
+	var html, i, j;
 	html  = '<a href="'+r.link+'" class="hover-line">';
 	if(r.icon) html += '<i class="'+r.icon+'"></i> ';
 	html += r.name;
 	html += '</a>';
 	$(".navi.navi-new").append(html);
+	html = '<div class="sub-navi-wrap">';
+	for(i=0; i<r.depth2.length; i++) {
+		if(r.depth2[i].depth3 && i > 0) html += '</div><div class="sub-navi-wrap">';
+		html += '<a href="'+r.depth2[i].link+'" class="sub-navi bold">'+r.depth2[i].name+'</a>';
+		if(r.depth2[i].depth3) {
+			for(j=0; j<r.depth2[i].depth3.length; j++) {
+				html += '<a href="'+r.depth2[i].depth3[j].link+'" class="sub-navi hover-line">'+r.depth2[i].depth3[j].name+'</a>';
+			}
+		}
+	}
+	html += '</div>';
+	html += '<div class="sub-banner">';
+	html += '	<img src="../img/mega-menu-4_460x.jpg" alt="배너" class="mw-100">';
+	html += '</div>';
+	$(".navi.navi-new").find('.sub-navi-wrapper').append(html);
 }
 
 function onNewProducts(r) {
