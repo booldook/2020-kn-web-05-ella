@@ -47,7 +47,7 @@ function onNaviLeave() {
 }
 
 function onNaviNew(r) {
-	$(".navi.navi-new").append(createNavi(r));
+	$(".navi.navi-new").prepend(createNavi(r));
 	var html = createSub(r);
 	html += '<div class="sub-banner">';
 	html += '	<img src="../img/mega-menu-4_460x.jpg" alt="배너" class="mw-100">';
@@ -56,15 +56,13 @@ function onNaviNew(r) {
 }
 
 function onNaviBest(r) {
-	$(".navi.navi-best").append(createNavi(r));
+	$(".navi.navi-best").prepend(createNavi(r));
 	$(".navi.navi-best").find('.sub-navi-wrapper').append(createSub(r));
-	
-	var alphabet = 
-	for(var i=0; i<alphabet.length; i++) {
-		if(alphabet[i].class == '')
-			html = '<li><a>'+alphabet[i].name+'</a></li>';
+	for(var i=0; i<r.alphabet.length; i++) {
+		if(r.alphabet[i].class == '')
+			html = '<li><a>'+r.alphabet[i].name+'</a></li>';
 		else 
-			html = '<li><a href="#" class="active">'+alphabet[i].name+'</a></li>';
+			html = '<li><a href="#" class="active">'+r.alphabet[i].name+'</a></li>';
 		$(".navi.navi-best").find('.alphabet-wrap').append(html);
 	}
 }
