@@ -45,6 +45,35 @@
 			{"name": "Glamos", "link": "#"},
 			{"name": "Metropolis", "link": "#"}
 		] }
+	],
+	"alphabet": [
+		{"name": "A", "class": "active"},
+		{"name": "B", "class": "active"},
+		{"name": "C", "class": "active"},
+		{"name": "D", "class": "active"},
+		{"name": "E", "class": "active"},
+		{"name": "F", "class": ""},
+		{"name": "G", "class": "active"},
+		{"name": "H", "class": ""},
+		{"name": "I", "class": "active"},
+		{"name": "J", "class": ""},
+		{"name": "K", "class": ""},
+		{"name": "L", "class": ""},
+		{"name": "M", "class": "active"},
+		{"name": "N", "class": ""},
+		{"name": "O", "class": ""},
+		{"name": "P", "class": ""},
+		{"name": "Q", "class": "active"},
+		{"name": "R", "class": ""},
+		{"name": "S", "class": "active"},
+		{"name": "T", "class": ""},
+		{"name": "U", "class": "active"},
+		{"name": "V", "class": "active"},
+		{"name": "W", "class": "active"},
+		{"name": "X", "class": "active"},
+		{"name": "Y", "class": ""},
+		{"name": "Z", "class": ""},
+		{"name": "1-9", "class": ""}
 	]
 }
 

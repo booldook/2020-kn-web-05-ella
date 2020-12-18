@@ -58,6 +58,15 @@ function onNaviNew(r) {
 function onNaviBest(r) {
 	$(".navi.navi-best").append(createNavi(r));
 	$(".navi.navi-best").find('.sub-navi-wrapper').append(createSub(r));
+	
+	var alphabet = 
+	for(var i=0; i<alphabet.length; i++) {
+		if(alphabet[i].class == '')
+			html = '<li><a>'+alphabet[i].name+'</a></li>';
+		else 
+			html = '<li><a href="#" class="active">'+alphabet[i].name+'</a></li>';
+		$(".navi.navi-best").find('.alphabet-wrap').append(html);
+	}
 }
 
 function onNewProducts(r) {
