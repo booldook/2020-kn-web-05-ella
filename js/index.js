@@ -7,10 +7,21 @@
 /********* 이벤트선언 **********/
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
 $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
+$.get('../json/navi-new.json', onNaviNew);	// new release 생성
 $.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
 
 
+
 /********* 이벤트콜백 **********/
+function onNaviNew(r) {
+	var html, i;
+	html  = '<a href="'+r.link+'" class="hover-line">';
+	if(r.icon) html += '<i class="'+r.icon+'"></i> ';
+	html += r.name;
+	html += '</a>';
+	$(".navi.navi-new").append(html);
+}
+
 function onNewProducts(r) {
 	for(var i=0, html='', $slide; i<r.length; i++) {
 		html  = '<div class="slide swiper-slide">';
