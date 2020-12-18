@@ -10,9 +10,20 @@ $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
 $.get('../json/navi-new.json', onNaviNew);	// new release 생성
 $.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
 
+$(".navi-wrapper .navi").mouseenter(onNaviEnter);
+$(".navi-wrapper .navi").mouseleave(onNaviLeave);
+
 
 
 /********* 이벤트콜백 **********/
+function onNaviEnter() {
+	$(this).find(".sub-wrapper").addClass("active");
+}
+
+function onNaviLeave() {
+	$(this).find(".sub-wrapper").removeClass("active");
+}
+
 function onNaviNew(r) {
 	var html, i, j;
 	html  = '<a href="'+r.link+'" class="hover-line">';
