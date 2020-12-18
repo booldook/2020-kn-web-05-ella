@@ -1,0 +1,16 @@
+{
+	"name": "Sales",
+	"link": "#",
+	"icon": "fa fa-percent",
+	"brands": [
+		{"company": "", "src": "", "brand": [
+			{"name": ""},
+			{"name": ""},
+			{"name": ""},
+			{"name": ""},
+			{"name": ""},
+			{"name": ""},
+			{"name": ""}
+		]}
+	]
+}
