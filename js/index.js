@@ -43,6 +43,15 @@ function createSub2(r) {
 	return html;
 }
 
+function createSubNavi(el, r) {
+	$(el).prepend(createNavi(r))
+	$(el).find('.sub-wrapper2').append(createSub2(r));
+	$(el).mouseenter(onSub2Enter);
+	$(el).mouseleave(onSub2Leave);
+	$(el).find('.depth2').mouseenter(onDepth2Enter);
+	$(el).find('.depth2').mouseleave(onDepth2Leave);
+}
+
 /********* 이벤트선언 **********/
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
 $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
@@ -77,22 +86,15 @@ function onDepth2Leave() {
 }
 
 function onNaviMen(r) {
-	$(".navi.navi-men").prepend(createNavi(r))
-	$(".navi.navi-men").find('.sub-wrapper2').append(createSub2(r));
-	$(".navi.navi-men").mouseenter(onSub2Enter);
-	$(".navi.navi-men").mouseleave(onSub2Leave);
-	$(".navi.navi-men").find('.depth2').mouseenter(onDepth2Enter);
-	$(".navi.navi-men").find('.depth2').mouseleave(onDepth2Leave);
+	createSubNavi('.navi.navi-men', r);
 }
 
 function onNaviWomen(r) {
-	$(".navi.navi-women").prepend(createNavi(r))
-	$(".navi.navi-women").find('.sub-wrapper2').append(createSub2(r));
+	createSubNavi('.navi.navi-women', r);
 }
 
 function onNaviKids(r) {
-	$(".navi.navi-kids").prepend(createNavi(r))
-	$(".navi.navi-kids").$(".sub-wrapper2").append(createSub2(r));
+	createSubNavi('.navi.navi-kids', r);
 }
 
 function onNaviEnter() {
