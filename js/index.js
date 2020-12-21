@@ -68,7 +68,7 @@ function createSubNavi(el, r) {
 }
 
 function naviShowHide() {
-	if(winWidth >= 1199) {
+	if(winWidth >= 1199) { // PC
 		if(scTop >= topHeight + logoHeight){
 			$(".navi-wrapper").css({"position": "fixed"});
 			$(".navi-wrapper > .wrapper").css("max-width", "100%");
@@ -83,7 +83,7 @@ function naviShowHide() {
 		}
 		$(".logo-wrapper").css({"position": "relative"});
 	}
-	else {
+	else { // Mobile
 		if(scTop >= topHeight)
 			$(".logo-wrapper").css({"position": "fixed"});
 		else
