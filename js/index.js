@@ -67,6 +67,31 @@ function createSubNavi(el, r) {
 	$(el).find('.depth2').mouseleave(onDepth2Leave);
 }
 
+function naviShowHide() {
+	if(winWidth >= 1199) {
+		if(scTop >= topHeight + logoHeight){
+			$(".navi-wrapper").css({"position": "fixed"});
+			$(".navi-wrapper > .wrapper").css("max-width", "100%");
+			$(".navi-wrapper .navi-logo").css("display", "block");
+			$(".navi-wrapper .bt-login").css("display", "block");
+		}
+		else {
+			$(".navi-wrapper").css("position", "relative");
+			$(".navi-wrapper > .wrapper").css("max-width", "1200px");
+			$(".navi-wrapper .navi-logo").css("display", "none");
+			$(".navi-wrapper .bt-login").css("display", "none");
+		}
+		$(".logo-wrapper").css({"position": "relative"});
+	}
+	else {
+		if(scTop >= topHeight)
+			$(".logo-wrapper").css({"position": "fixed"});
+		else
+			$(".logo-wrapper").css("position", "relative");
+		$(".navi-wrapper").css({"position": "relative"});
+	}
+}
+
 /********* 이벤트선언 **********/
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
 $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
@@ -96,22 +121,7 @@ function onResize(e) {
 
 function onScroll(e) {
 	scTop = $(this).scrollTop();
-	
-	/* navi-wrapper fixed */
-	if(winWidth >= 1199) {
-		if(scTop >= topHeight + logoHeight)
-			$(".navi-wrapper").css({"position": "fixed"});
-		else
-			$(".navi-wrapper").css("position", "relative");
-		$(".logo-wrapper").css({"position": "relative"});
-	}
-	else {
-		if(scTop >= topHeight)
-			$(".logo-wrapper").css({"position": "fixed"});
-		else
-			$(".logo-wrapper").css("position", "relative");
-		$(".navi-wrapper").css({"position": "relative"});
-	}
+	naviShowHide(); // navi-wrapper fixed
 }
 
 function onSub2Enter() {
