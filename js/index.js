@@ -32,6 +32,9 @@ $.get('../json/navi-new.json', onNaviNew);	// new release 생성
 $.get('../json/navi-best.json', onNaviBest);	// best sellers 생성
 $.get('../json/navi-sales.json', onNaviSales); // sales 생성
 $.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
+$.get('../json/navi-men.json', onNaviMen); // Men 상품 가져오기
+$.get('../json/navi-women.json', onNaviWomen); // Women 상품 가져오기
+$.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
 
 $(".navi-wrapper .navi").mouseenter(onNaviEnter);
 $(".navi-wrapper .navi").mouseleave(onNaviLeave);
@@ -39,6 +42,18 @@ $(".navi-wrapper .navi").mouseleave(onNaviLeave);
 
 
 /********* 이벤트콜백 **********/
+function onNaviMen(r) {
+	$(".navi.navi-men").prepend(createNavi(r));
+}
+
+function onNaviWomen(r) {
+	$(".navi.navi-women").prepend(createNavi(r));
+}
+
+function onNaviKids(r) {
+	$(".navi.navi-kids").prepend(createNavi(r));
+}
+
 function onNaviEnter() {
 	$(this).find(".sub-wrapper").addClass("active");
 }
