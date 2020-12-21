@@ -1,7 +1,22 @@
 /********* 전역선언 **********/
-
+var scTop, topHeight, logoHeight, winWidth;
 
 /********* 사용자함수 **********/
+function mainBanner() {
+	var swiper = new Swiper('.main-wrapper.swiper-container', {
+		loop: true,
+		effect: 'fade',
+		pagination: {
+			el: '.main-wrapper .pager-wrap',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.main-wrapper .bt-next',
+			prevEl: '.main-wrapper .bt-prev',
+		},
+	});
+}
+
 function createNavi(r) {
 	var html  = '<a href="'+r.link+'" class="hover-line">';
 	if(r.icon) html += '<i class="'+r.icon+'"></i> ';
@@ -66,22 +81,39 @@ $.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
 $(".navi-wrapper .navi").mouseenter(onNaviEnter);
 $(".navi-wrapper .navi").mouseleave(onNaviLeave);
 
-var mainBanner = new Swiper('.main-wrapper.swiper-container', {
-	loop: true,
-	effect: 'fade',
-	pagination: {
-		el: '.main-wrapper .pager-wrap',
-		clickable: true,
-	},
-	navigation: {
-		nextEl: '.main-wrapper .bt-next',
-		prevEl: '.main-wrapper .bt-prev',
-	},
-});
+$(window).scroll(onScroll).resize(onResize).trigger("resize");
+
+mainBanner();
 
 
 
 /********* 이벤트콜백 **********/
+function onResize(e) {
+	topHeight = $('.top-wrapper').outerHeight();
+	logoHeight = $('.logo-wrapper').outerHeight();
+	winWidth = $(window).width();
+}
+
+function onScroll(e) {
+	scTop = $(this).scrollTop();
+	
+	/* navi-wrapper fixed */
+	if(winWidth >= 1199) {
+		if(scTop >= topHeight + logoHeight)
+			$(".navi-wrapper").css({"position": "fixed"});
+		else
+			$(".navi-wrapper").css("position", "relative");
+		$(".logo-wrapper").css({"position": "relative"});
+	}
+	else {
+		if(scTop >= topHeight)
+			$(".logo-wrapper").css({"position": "fixed"});
+		else
+			$(".logo-wrapper").css("position", "relative");
+		$(".navi-wrapper").css({"position": "relative"});
+	}
+}
+
 function onSub2Enter() {
 	$(this).find('.sub-wrapper2').stop().slideDown(300);
 }
