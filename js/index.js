@@ -66,6 +66,19 @@ $.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
 $(".navi-wrapper .navi").mouseenter(onNaviEnter);
 $(".navi-wrapper .navi").mouseleave(onNaviLeave);
 
+var mainBanner = new Swiper('.main-wrapper.swiper-container', {
+	loop: true,
+	effect: 'fade',
+	pagination: {
+		el: '.main-wrapper .pager-wrap',
+		clickable: true,
+	},
+	navigation: {
+		nextEl: '.main-wrapper .bt-next',
+		prevEl: '.main-wrapper .bt-prev',
+	},
+});
+
 
 
 /********* 이벤트콜백 **********/
