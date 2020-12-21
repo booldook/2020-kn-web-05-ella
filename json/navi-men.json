@@ -1,0 +1,38 @@
+[
+	{"name": "Collection List Pages", "link": "#", "depth2": [
+		{"name": "Collection List 01", "link": "#"},
+		{"name": "Collection List 02", "link": "#"},
+		{"name": "Collection List 03", "link": "#"},
+		{"name": "Collection List 04", "link": "#"},
+		{"name": "Collection List 05", "link": "#"},
+		{"name": "Sub Collection 01", "link": "#"},
+		{"name": "Sub Collection 02", "link": "#"}
+	]},
+	{"name": "Collection Product Pages", "link": "#", "depth2": [
+		{"name": "Collection Default", "link": "#"},
+		{"name": "Collection FullWidth", "link": "#"},
+		{"name": "Collection Masonry", "link": "#"},
+		{"name": "Collection Without Sidebar", "link": "#"},
+		{"name": "Collection Right Sidebar", "link": "#"},
+		{"name": "Collection ADVBanner", "link": "#"},
+		{"name": "Collection Express Order", "link": "#"}
+	]},
+	{"name": "Product Detailed Pages", "link": "#", "depth2": [
+		{"name": "Product 01 Default", "link": "#"},
+		{"name": "Product 02 Gallery", "link": "#"},
+		{"name": "Product 03 Slide", "link": "#"},
+		{"name": "Product 04 Left Thumb", "link": "#"},
+		{"name": "Product 05 Right Thumb", "link": "#"},
+		{"name": "Product 06 Vertical Tab", "link": "#"},
+		{"name": "Product 07 Right Sidebar", "link": "#"},
+		{"name": "Product Full Width", "link": "#"}
+	]},
+	{"name": "Product Features", "link": "#", "depth2": [
+		{"name": "Grouped Products", "link": "#"},
+		{"name": "Upsell Bundled Products", "link": "#"},
+		{"name": "Variant Images Grouped", "link": "#"},
+		{"name": "Back in stock Notification", "link": "#"},
+		{"name": "Color Comparison", "link": "#"}
+	]}
+]
+

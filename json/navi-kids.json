@@ -1,0 +1,25 @@
+[
+	{"name": "Blog Default", "link": "#", "depth2": [
+		{"name": "Tea and Coffee", "link": "#"},
+		{"name": "Belle Dolls", "link": "#"},
+		{"name": "Glasso", "link": "#"},
+		{"name": "Jewel", "link": "#"},
+		{"name": "Gymuso", "link": "#"},
+		{"name": "Soun", "link": "#"},
+		{"name": "Cospora", "link": "#"},
+		{"name": "Shopbe", "link": "#"},
+		{"name": "Caros Automotive", "link": "#"},
+		{"name": "Luxwatches", "link": "#"},
+		{"name": "Watchtica", "link": "#"},
+		{"name": "Furnitica", "link": "#"},
+		{"name": "Bagratica", "link": "#"},
+		{"name": "Bicycle", "link": "#"},
+		{"name": "Petica", "link": "#"},
+		{"name": "Jewelias", "link": "#"}
+	]},
+	{"name": "Blog Right Sidebar", "link": "#", "depth2": []},
+	{"name": "Blog Masonry", "link": "#", "depth2": []},
+	{"name": "Blog Full Width", "link": "#", "depth2": []},
+	{"name": "Blog Detail with LookBook", "link": "#", "depth2": []},
+	{"name": "Blog Detail with Product Widget", "link": "#", "depth2": []}
+]
