@@ -70,11 +70,11 @@ $(".navi-wrapper .navi").mouseleave(onNaviLeave);
 
 /********* 이벤트콜백 **********/
 function onSub2Enter() {
-	$(this).find('.sub-wrapper2').stop().slideDown(100);
+	$(this).find('.sub-wrapper2').stop().slideDown(300);
 }
 
 function onSub2Leave() {
-	$(this).find('.sub-wrapper2').stop().slideUp(100);
+	$(this).find('.sub-wrapper2').stop().slideUp(300);
 }
 
 function onDepth2Enter() {
