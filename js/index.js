@@ -25,6 +25,24 @@ function createSub(r) {
 	return html;
 }
 
+function createSub2(r) {
+	for(var i=0, html=''; i<r.depth2.length; i++) {
+		html += '<li class="depth depth2">';
+		html += '	<a href="'+r.depth2[i].link+'">'+r.depth2[i].name+'</a>';
+		if(r.depth2[i].depth3 && r.depth2[i].depth3.length > 0) {
+			html += '<ul>';
+			for(var j=0; j<r.depth2[i].depth3.length; j++) {
+				html += '<li class="depth depth3">';
+				html += '	<a href="'+r.depth2[i].depth3[j].link+'">'+r.depth2[i].depth3[j].name+'</a>';
+				html += '</li>';
+			}
+			html += '</ul>';
+		}
+		html += '</li>';
+	}
+	return html;
+}
+
 /********* 이벤트선언 **********/
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
 $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
@@ -42,16 +60,39 @@ $(".navi-wrapper .navi").mouseleave(onNaviLeave);
 
 
 /********* 이벤트콜백 **********/
+function onSub2Enter() {
+	$(this).find('.sub-wrapper2').stop().slideDown(100);
+}
+
+function onSub2Leave() {
+	$(this).find('.sub-wrapper2').stop().slideUp(100);
+}
+
+function onDepth2Enter() {
+	$(this).find('ul').stop().fadeIn(300);
+}
+
+function onDepth2Leave() {
+	$(this).find('ul').stop().fadeOut(300);
+}
+
 function onNaviMen(r) {
-	$(".navi.navi-men").prepend(createNavi(r));
+	$(".navi.navi-men").prepend(createNavi(r))
+	$(".navi.navi-men").find('.sub-wrapper2').append(createSub2(r));
+	$(".navi.navi-men").mouseenter(onSub2Enter);
+	$(".navi.navi-men").mouseleave(onSub2Leave);
+	$(".navi.navi-men").find('.depth2').mouseenter(onDepth2Enter);
+	$(".navi.navi-men").find('.depth2').mouseleave(onDepth2Leave);
 }
 
 function onNaviWomen(r) {
-	$(".navi.navi-women").prepend(createNavi(r));
+	$(".navi.navi-women").prepend(createNavi(r))
+	$(".navi.navi-women").find('.sub-wrapper2').append(createSub2(r));
 }
 
 function onNaviKids(r) {
-	$(".navi.navi-kids").prepend(createNavi(r));
+	$(".navi.navi-kids").prepend(createNavi(r))
+	$(".navi.navi-kids").$(".sub-wrapper2").append(createSub2(r));
 }
 
 function onNaviEnter() {
