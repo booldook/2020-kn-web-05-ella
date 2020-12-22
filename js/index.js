@@ -1,5 +1,5 @@
 /********* 전역선언 **********/
-var scTop, topHeight, logoHeight, winWidth;
+var scTop, topHeight, logoHeight, winWidth, navi = [];
 
 /********* 사용자함수 **********/
 function mainBanner() {
@@ -92,19 +92,31 @@ function naviShowHide() {
 	}
 }
 
+function createMoNavi() {
+	var i, html='';
+	for(var i in navi) {
+		html += '<li onclick="showDepth2('+i+');">'+navi[i].name+'</li>';
+	}
+	$(".modal-navi").find('.depth1').html(html);
+}
+
+
+
 /********* 이벤트선언 **********/
 mainBanner();	// 배너세팅
 $(window).scroll(onScroll).resize(onResize).trigger("resize");
 
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
 $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
+
 $.get('../json/navi-new.json', onNaviNew);	// new release 생성
 $.get('../json/navi-best.json', onNaviBest);	// best sellers 생성
 $.get('../json/navi-sales.json', onNaviSales); // sales 생성
-$.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
 $.get('../json/navi-men.json', onNaviMen); // Men 상품 가져오기
 $.get('../json/navi-women.json', onNaviWomen); // Women 상품 가져오기
 $.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
+
+$.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
 
 $(".navi-wrapper .navi").mouseenter(onNaviEnter);	// 메인네비
 $(".navi-wrapper .navi").mouseleave(onNaviLeave);	// 메인네비
@@ -130,6 +142,7 @@ function onModalShow(e) {
 	$(".modal-container").addClass('active');
 	$("body").addClass("hide");
 	$($(this).data('modal')).addClass("active");
+	if($(this).data('modal') === '.modal-navi') createMoNavi();
 }
 
 function onModalHide(e) {
@@ -169,14 +182,17 @@ function onDepth2Leave() {
 }
 
 function onNaviMen(r) {
+	navi[2] = r;
 	createSubNavi('.navi.navi-men', r);
 }
 
 function onNaviWomen(r) {
+	navi[3] = r;
 	createSubNavi('.navi.navi-women', r);
 }
 
 function onNaviKids(r) {
+	navi[4] = r;
 	createSubNavi('.navi.navi-kids', r);
 }
 
@@ -189,6 +205,7 @@ function onNaviLeave() {
 }
 
 function onNaviNew(r) {
+	navi[0] = r;
 	$(".navi.navi-new").prepend(createNavi(r));
 	var html = createSub(r);
 	html += '<div class="sub-banner">';
@@ -198,6 +215,7 @@ function onNaviNew(r) {
 }
 
 function onNaviBest(r) {
+	navi[1] = r;
 	$(".navi.navi-best").prepend(createNavi(r));
 	$(".navi.navi-best").find('.sub-navi-wrapper').append(createSub(r));
 	for(var i=0; i<r.alphabet.length; i++) {
@@ -210,6 +228,7 @@ function onNaviBest(r) {
 }
 
 function onNaviSales(r) {
+	navi[5] = r;
 	$(".navi.navi-sales").prepend(createNavi(r));
 	for(var i=0; i<r.brands.length; i++) {
 		html  = '<div class="brand-wrap">';
