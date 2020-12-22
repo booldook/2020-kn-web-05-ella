@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event Bubbling</title>
+	<style>
+		.wrapper {width: 200px; height: 200px; background-color: blueviolet;}
+		.wrap {width: 150px; height: 150px; background-color: #65d2e6;}
+		.box {width: 100px; height: 100px; background-color: #9ce22b;}
+	</style>
+	<script src="../js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="wrap">
+			<div class="box">
+				<a href="//naver.com" class="link">클릭</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(".wrapper").click(function(e){
+			console.log(".wrapper");
+		});
+		$(".wrap").click(function(e){
+			e.stopPropagation();
+			console.log(".wrap");
+		});
+		$(".box").click(function(e){
+			e.stopPropagation();
+			console.log(".box");
+		});
+		$(".link").click(function(e){
+			e.stopPropagation();
+			e.preventDefault();
+			console.log(".link");
+		});
+	</script>
+</body>
+</html>

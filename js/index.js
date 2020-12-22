@@ -112,6 +112,7 @@ $(".navi-wrapper .navi").mouseleave(onNaviLeave);	// 메인네비
 $(".modal-trigger").click(onModalShow);
 $(".modal-container").click(onModalHide);
 $('.modal-wrapper').click(onModalWrapperClick);
+$('.modal-wrapper').find(".bt-close").click(onModalHide);
 
 
 
