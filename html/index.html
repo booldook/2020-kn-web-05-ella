@@ -79,13 +79,19 @@
 					<div>FLASH SALE</div>
 					<div>FROM $29</div>
 				</div>
-				<a href="#" class="a-login hover-line">Login</a>
-				<a href="#" class="bt-login"><i class="fa fa-user-circle"></i></a>
+				<a href="#" class="bt-login modal-trigger" data-modal=".modal-login">
+					<span class="hover-line">Login</span>
+					<i class="fa fa-user-circle"></i>
+				</a>
 			</div>
 			<div class="link-mo-wrap">
 				<a href="#"><i class="fa fa-search"></i></a>
-				<a href="#"><i class="fa fa-user-circle"></i></a>
-				<a href="#" class="rel"><i class="fa fa-shopping-bag"></i><div class="cart-cnt">0</div></a>
+				<a href="#" class="modal-trigger" data-modal=".modal-login">
+					<i class="fa fa-user-circle"></i>
+				</a>
+				<a href="#" class="modal-trigger rel" data-modal=".modal-cart">
+					<i class="fa fa-shopping-bag"></i><div class="cart-cnt">0</div>
+				</a>
 			</div>
 		</div>
 		<!-- .logo-wrapper // -->
@@ -166,8 +172,12 @@
 				<a href="#" class="bt-search"><i class="fa fa-search"></i></a>
 				<span class="line"></span>
 				<a href="#" class="bt-wishlist"><i class="fa fa-heart"></i></a>
-				<a href="#" class="rel"><i class="fa fa-shopping-bag"></i><div class="cart-cnt">0</div></a>
-				<a href="#" class="bt-login"><i class="fa fa-user-circle"></i></a>
+				<a href="#" class="modal-trigger rel" data-modal=".modal-cart">
+					<i class="fa fa-shopping-bag"></i><div class="cart-cnt">0</div>
+				</a>
+				<a href="#" class="modal-trigger bt-login" data-modal=".modal-login">
+					<i class="fa fa-user-circle"></i>
+				</a>
 			</div>
 		</div>
 		<!-- .navi-wrapper // -->
@@ -222,12 +232,12 @@
 
 	<!-- .modal-container -->
 	<div class="modal-container">
-		<div class="modal-wrapper type-rt login-wrapper">
+		<div class="modal-wrapper type-rt modal-login">
 			<div class="close-wrap">
 				<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
 			</div>
 		</div>
-		<div class="modal-wrapper type-rt cart-wrapper">
+		<div class="modal-wrapper type-rt modal-cart">
 			<div class="close-wrap">
 				<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
 			</div>
