@@ -93,6 +93,9 @@ function naviShowHide() {
 }
 
 /********* 이벤트선언 **********/
+mainBanner();	// 배너세팅
+$(window).scroll(onScroll).resize(onResize).trigger("resize");
+
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
 $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
 $.get('../json/navi-new.json', onNaviNew);	// new release 생성
@@ -103,16 +106,40 @@ $.get('../json/navi-men.json', onNaviMen); // Men 상품 가져오기
 $.get('../json/navi-women.json', onNaviWomen); // Women 상품 가져오기
 $.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
 
-$(".navi-wrapper .navi").mouseenter(onNaviEnter);
-$(".navi-wrapper .navi").mouseleave(onNaviLeave);
+$(".navi-wrapper .navi").mouseenter(onNaviEnter);	// 메인네비
+$(".navi-wrapper .navi").mouseleave(onNaviLeave);	// 메인네비
 
-$(window).scroll(onScroll).resize(onResize).trigger("resize");
+$(".modal-trigger").click(onModalShow);
+$(".modal-container").click(onModalHide);
+$('.modal-wrapper').click(onModalWrapperClick);
 
-mainBanner();
+
 
 
 
 /********* 이벤트콜백 **********/
+function onModalWrapperClick(e) {
+	e.stopPropagation();
+}
+
+function onModalShow(e) {
+	e.preventDefault();	// 기본이벤트 a니까 href의 기능(기본기능)을 막는다.
+	$(".modal-container").css({"display": "block"});
+	$(".modal-container").css("opacity");
+	$(".modal-container").addClass('active');
+	$("body").addClass("hide");
+	$($(this).data('modal')).addClass("active");
+}
+
+function onModalHide(e) {
+	$(".modal-container").removeClass('active');
+	$('.modal-wrapper').removeClass("active");
+	setTimeout(function(){
+		$(".modal-container").css({"display": "none"});
+		$("body").removeClass("hide");
+	}, 300);
+}
+
 function onResize(e) {
 	topHeight = $('.top-wrapper').outerHeight();
 	logoHeight = $('.logo-wrapper').outerHeight();
