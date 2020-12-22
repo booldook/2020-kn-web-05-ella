@@ -174,7 +174,7 @@ a:link, a:visited, a:active, a:hover {color: inherit; text-decoration: none;}
 
 .modal-wrapper.type-rt {top: 0; right: 0; transform: translateX(100%); width: 400px; height: 100vh; padding: 0 2em;}
 .modal-wrapper.type-ct {top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; padding: 3em 3em 1em 3em; border: 1px solid #111; display: none;}
-.modal-wrapper.type-lt {top: 0; left: 0; transform: translateX(-100%); width: 400px; height: 100vh; padding: 0 2em;}
+.modal-wrapper.type-lt {top: 0; left: 0; transform: translateX(-100%); width: 400px; height: 100vh; overflow-y: auto;}
 
 .modal-wrapper .bt-close {background-color: transparent; border: none; outline-style: none; cursor: pointer;}
 
@@ -193,10 +193,14 @@ a:link, a:visited, a:active, a:hover {color: inherit; text-decoration: none;}
 .modal-wrapper .bt-blue,
 .modal-wrapper .bt-white {margin: 2em 0;}
 
-.modal-wrapper.modal-navi .top-wrap {display: flex; justify-content: space-between; align-items: center; padding: 0.75em 0; border: 1px solid red;}
-
-
-
+.modal-wrapper.modal-navi .depth {position: absolute; width: 100%; height: 100vh; top:0; left: 0; transition: all 0.3s; background-color: #fff;}
+.modal-wrapper.modal-navi .depth2,
+.modal-wrapper.modal-navi .depth3 {transform: translateX(-100%);}
+.modal-wrapper.modal-navi .depth2.active,
+.modal-wrapper.modal-navi .depth3.active {transform: translateX(0);}
+.modal-wrapper.modal-navi .top-wrap {display: flex; justify-content: space-between; align-items: center; padding: 0.75em;}
+.modal-wrapper.modal-navi li {padding: 1.5em; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #eaeaea; font-weight: bold; cursor: pointer;}
+.modal-wrapper.modal-navi li:hover {color: #255b70; background-color: #f8f8f8;}
 
 /************ 반응형 *************/
 @media screen and (max-width: 1199px) {
@@ -227,4 +231,7 @@ a:link, a:visited, a:active, a:hover {color: inherit; text-decoration: none;}
 @media screen and (max-width: 575px) {
 	.top-wrapper .top-wrap {flex-direction: column;}
 	.main-wrapper .pager-wrapper {font-size: 0.375em;}
+	.modal-wrapper.type-lt,
+	.modal-wrapper.type-rt,
+	.modal-wrapper.type-ct {width: 320px;}
 }
