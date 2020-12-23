@@ -186,6 +186,7 @@ $.get('../json/navi-women.json', onNaviWomen); // Women 상품 가져오기
 $.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
 
 $.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
+$.get('../json/looking.json', onLooking);	// Looking 생성
 
 $(".navi-wrapper .navi").mouseenter(onNaviEnter);	// 메인네비
 $(".navi-wrapper .navi").mouseleave(onNaviLeave);	// 메인네비
@@ -198,8 +199,20 @@ $('.modal-wrapper').find(".bt-close").click(onModalHide);
 
 
 
-
 /********* 이벤트콜백 **********/
+
+function onLooking(r) {
+	for(var i=0, html=''; i<r.length; i++) {
+		html += '<li class="spot">';
+		html += '<a href="'+r[i].link+'">';
+		html += '<img src="'+r[i].src+'" alt="spot-img" class="w-100 animate__animated">';
+		html += '<h3 class="title hover-line">'+r[i].title+'</h3>';
+		html += '</a>';
+		html += '</li>';
+	}
+	$(".looking-wrapper .spot-wrapper").html(html);
+}
+
 function onTransBg(e) {
 	e.stopPropagation();
 	onLangChg();
