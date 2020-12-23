@@ -96,7 +96,7 @@ function createMoNavi() {
 	console.log(navi);
 	var html = '';
 	html += '<div class="top-wrap">';
-	html += '	<div class="close-wrap3 bt-close">';
+	html += '	<div class="close-wrap3 bt-close" onclick="onModalHide()">';
 	html += '		<i class="fa fa-times"></i>';
 	html += '	</div>';
 	html += '	<div class="tel-wrap">Available 24/7 at <strong>(018) 900-6690</strong></div>';
@@ -110,6 +110,7 @@ function createMoNavi() {
 	}
 	html += '</ul>';
 	$(".modal-navi").find('.depth1').html(html);
+	$(".modal-navi .depth2, .modal-navi .depth3").removeClass('active');
 }
 
 function createDepth2(idx) {
@@ -129,6 +130,25 @@ function createDepth2(idx) {
 	html += '</ul>';
 	$(".modal-navi .depth2").html(html);
 	$(".modal-navi .depth2").addClass("active")
+}
+
+function createDepth3(idx, idx2) {
+	html  = '<div class="top-wrap">';
+	html += '	<div class="close-wrap3 bt-prev" onclick="closeDepth(3)">';
+	html += '		<i class="fa fa-angle-left"></i>';
+	html += '	</div>';
+	html += '	<h4 class="title">'+navi[idx].depth2[idx2].name+'</h4>';
+	html += '</div>';
+	html += '<ul>';
+	for(var i=0; i<navi[idx].depth2[idx2].depth3.length; i++) {
+		html += '<li>';
+		html += '<a href="#">'+navi[idx].depth2[idx2].depth3[i].name+'</a>';
+		html += '<i class="fa fa-angle-right"></i>';
+		html += '</li>';
+	}
+	html += '</ul>';
+	$(".modal-navi .depth3").html(html);
+	$(".modal-navi .depth3").addClass("active");
 }
 
 function closeDepth(n) {
