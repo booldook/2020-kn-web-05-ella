@@ -176,10 +176,11 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 
 
 /************ looking-wrapper *************/
-.looking-wrapper {padding: 4em 0;}
+.looking-wrapper {padding: 4em 0; border-bottom: 1px solid #eaeaea;}
 .looking-wrapper .spot-wrapper {display: flex; flex-wrap: wrap;}
 .looking-wrapper .spot-wrapper > .spot {flex: 16.6666% 0 0; text-align: center;}
 .looking-wrapper .spot-wrapper > .spot .title {color: #293355; display: inline-block;}
+.looking-wrapper .spot-wrapper > .spot:hover img {animation-name: headShake;}
 
 
 
@@ -217,6 +218,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .modal-wrapper.modal-navi .top-wrap {display: flex; justify-content: space-between; align-items: center; padding: 0.75em;}
 .modal-wrapper.modal-navi li {padding: 1.5em; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #eaeaea; font-weight: bold; cursor: pointer;}
 .modal-wrapper.modal-navi li:hover {color: #255b70; background-color: #f8f8f8;}
+
 
 /************ 반응형 *************/
 @media screen and (max-width: 1199px) {
