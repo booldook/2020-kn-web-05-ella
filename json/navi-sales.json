@@ -2,8 +2,8 @@
 	"name": "Sales",
 	"link": "#",
 	"icon": "fa fa-percent",
-	"brands": [
-		{"company": "HARUM QUIDEM", "src": "../img/mega-menu-5_385x.jpg", "brand": [
+	"depth2": [
+		{"name": "HARUM QUIDEM", "src": "../img/mega-menu-5_385x.jpg", "depth3": [
 			{"name": "Cosmopolis", "link": "#"},
 			{"name": "Suitó", "link": "#"},
 			{"name": "Milancélos", "link": "#"},
@@ -11,7 +11,7 @@
 			{"name": "Glamos", "link": "#"},
 			{"name": "Metropolis", "link": "#"}
 		]},
-		{"company": "LOREMICA", "src": "../img/mega-menu-6_385x.jpg", "brand": [
+		{"name": "LOREMICA", "src": "../img/mega-menu-6_385x.jpg", "depth3": [
 			{"name": "Cosmopolis", "link": "#"},
 			{"name": "Suitó", "link": "#"},
 			{"name": "Milancélos", "link": "#"},
@@ -19,7 +19,7 @@
 			{"name": "Glamos", "link": "#"},
 			{"name": "Metropolis", "link": "#"}
 		]},
-		{"company": "SARCUSO", "src": "../img/mega-menu-7_385x.jpg", "brand": [
+		{"name": "SARCUSO", "src": "../img/mega-menu-7_385x.jpg", "depth3": [
 			{"name": "Cosmopolis", "link": "#"},
 			{"name": "Suitó", "link": "#"},
 			{"name": "Milancélos", "link": "#"},
@@ -27,7 +27,7 @@
 			{"name": "Glamos", "link": "#"},
 			{"name": "Metropolis", "link": "#"}
 		]},
-		{"company": "MILANCELOS", "src": "../img/mega-menu-8_385x.jpg", "brand": [
+		{"name": "MILANCELOS", "src": "../img/mega-menu-8_385x.jpg", "depth3": [
 			{"name": "Cosmopolis", "link": "#"},
 			{"name": "Suitó", "link": "#"},
 			{"name": "Milancélos", "link": "#"},
@@ -35,7 +35,7 @@
 			{"name": "Glamos", "link": "#"},
 			{"name": "Metropolis", "link": "#"}
 		]},
-		{"company": "COSMOPOLIS", "src": "../img/mega-menu-9_385x.jpg", "brand": [
+		{"name": "COSMOPOLIS", "src": "../img/mega-menu-9_385x.jpg", "depth3": [
 			{"name": "Cosmopolis", "link": "#"},
 			{"name": "Suitó", "link": "#"},
 			{"name": "Milancélos", "link": "#"},
