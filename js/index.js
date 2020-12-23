@@ -122,10 +122,17 @@ function createDepth2(idx) {
 	html += '</div>';
 	html += '<ul>';
 	for(var i=0; i<navi[idx].depth2.length; i++) {
-		html += '<li onclick="createDepth3('+idx+', '+i+');">';
-		html += '<a href="#">'+navi[idx].depth2[i].name+'</a>';
-		html += '<i class="fa fa-angle-right"></i>';
-		html += '</li>';
+		if(navi[idx].depth2[i].depth3 && navi[idx].depth2[i].depth3.length > 0) {
+			html += '<li onclick="createDepth3('+idx+', '+i+');">';
+			html += '<a href="#">'+navi[idx].depth2[i].name+'</a>';
+			html += '<i class="fa fa-angle-right"></i>';
+			html += '</li>';
+		}
+		else {
+			html += '<li>';
+			html += '<a href="#">'+navi[idx].depth2[i].name+'</a>';
+			html += '</li>';
+		}
 	}
 	html += '</ul>';
 	$(".modal-navi .depth2").html(html);
@@ -143,7 +150,6 @@ function createDepth3(idx, idx2) {
 	for(var i=0; i<navi[idx].depth2[idx2].depth3.length; i++) {
 		html += '<li>';
 		html += '<a href="#">'+navi[idx].depth2[idx2].depth3[i].name+'</a>';
-		html += '<i class="fa fa-angle-right"></i>';
 		html += '</li>';
 	}
 	html += '</ul>';
