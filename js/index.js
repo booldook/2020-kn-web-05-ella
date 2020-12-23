@@ -112,7 +112,9 @@ function createMoNavi() {
 	}
 	html += '</ul>';
 	$(".modal-navi").find('.depth1').html(html)
-	$(".modal-navi").find('.depth1').append($(".trans-wrapper").clone().attr("style", ""));
+	$(".modal-navi").find('.depth1').append($(".trans-wrapper").clone().attr("style", "")).find('.trans-bg').remove();
+	$(".modal-navi").find('.depth1').find('.trans-wrapper .bt-down').click(onLangSel);
+
 
 	$(".modal-navi .depth2, .modal-navi .depth3").removeClass('active');
 }
