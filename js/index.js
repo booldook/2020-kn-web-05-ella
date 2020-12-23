@@ -172,7 +172,7 @@ $(window).scroll(onScroll); // scroll spy
 $(window).resize(onResize).trigger("resize"); // el 높이, 폭, 위치
 
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
-$('.top-wrapper .bt-down').click(onLangSel); // 언어선택
+$('.trans-wrapper .bt-down').click(onLangSel); // 언어선택
 $('.trans-wrapper .trans-bg').click(onTransBg); // trans창 닫기
 $('.trans-wrapper .lang').click(onLangClick); // trans창 닫기
 
