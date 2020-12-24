@@ -4,6 +4,20 @@ var scTop, topHeight, logoHeight, winWidth, navi = [];
 
 
 /********* 사용자함수 **********/
+function renderPrd() {
+	$('.prd').each(function(i){
+		var discount = $(this).data('discount');
+		var icon = $(this).data('icon');
+		var color = $(this).data('color');
+		console.log(discount, icon, color);
+	});
+}
+
+function chgImg(el, src) {
+	$(el).parents('.prd').find('.img-front').attr('src', src);
+	$(el).parent().addClass('active').siblings().removeClass('active');
+}
+
 function renderStar() {
 	$(".star").each(function(i){
 		var score = Number($(this).data('score'));
@@ -206,6 +220,8 @@ $('.modal-wrapper').find(".bt-close").click(onModalHide);
 
 
 renderStar();
+renderPrd();
+
 
 /********* 이벤트콜백 **********/
 

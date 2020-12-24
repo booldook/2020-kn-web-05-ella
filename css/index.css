@@ -47,11 +47,17 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .star > i { color :#aaa;}
 .star > i.active {color: #ba7a2d;}
 
-.prd {user-select: none; background-color: #fff;}
+.prd {user-select: none; background-color: #fff; padding: 0 1em;}
+.prd .img-wrap {position: relative;}
+.prd .img-wrap:hover .img-front {opacity: 0;}
+.prd .img-wrap > .img-front {position: absolute; top: 0; left: 0; transition: all 0.5s; height: 100%;}
+.prd .img-wrap .bt-white {width: 70%; padding: 1.5em 0; left: 15%; bottom: 10%; position: absolute; box-shadow: none; opacity: 0; transition: all 0.3s;}
+.prd:hover .img-wrap .bt-white {opacity: 1;}
 .prd .title-wrap {display: flex; justify-content: space-between; padding: 1em 0;}
 .prd .title-wrap .title {font-weight: bold;}
+.prd .title-wrap .bt-like {cursor: pointer;}
 .prd .choice-wrap {display: flex; margin: 0.5em 0;}
-.prd .choice-wrap .choice {width: 24px; height: 24px; border-radius: 50%; overflow: hidden; margin-right: 0.5em;}
+.prd .choice-wrap .choice {width: 50px; height: 50px; border-radius: 50%; overflow: hidden; margin-right: 0.5em; cursor: pointer; border: 2px solid #fff; transition: all 0.5s;}
 .prd .choice-wrap .choice.active {border: 2px solid #333;}
 .prd .content-wrap {font-weight: bold; margin: 1em 0;}
 .prd .price-wrap {font-weight: bold; margin: 1em 0; color: #ba7a2d;}
@@ -202,13 +208,11 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 
 /************ best-wrapper *************/
 .best-wrapper {padding: 4em 0;}
-.prd-wrapper {}
+.prd-wrapper {margin-top: 3em;}
 .prd-wrapper .prd-wrap {display: flex;}
 .prd-wrapper .prd-wrap .prd {width: 25%; flex-shrink: 0; flex-grow: 0;}
 
-.prd-wrapper .img-wrap {position: relative;}
-.prd-wrapper .img-wrap:hover .img-front {opacity: 0;}
-.prd-wrapper .img-wrap > .img-front {position: absolute; top: 0; left: 0; transition: all 0.5s;}
+
 
 
 
