@@ -189,6 +189,14 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .best-wrapper {padding: 4em 0;}
 
 
+/************ brand-wrapper *************/
+.brand-wrapper {margin: 3em 0;}
+.brand-wrapper .brand-wrap {display: flex; flex-wrap: wrap;}
+.brand-wrap .brand {flex: 50% 0 0; position: relative; overflow: hidden; background-color: #000;}
+.brand-wrap .brand .bt-white {position: absolute; width: 70%; left: 15%; bottom: 10%; z-index: 2; padding: 2em 0;}
+.brand-wrap .brand img {transition: all 1s;}
+.brand-wrap .brand:hover img {transform: scale(1.1); opacity: .7;}
+
 
 /************ 모달 *************/
 .modal-container {width: 100%; height: 100vh; position: fixed; top: 0; left: 0; background-color: rgba(0,0,0,.5); z-index: 999; transition: all 0.3s; opacity: 0; display: none;}
@@ -259,4 +267,5 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 	.modal-wrapper.type-lt,
 	.modal-wrapper.type-rt,
 	.modal-wrapper.type-ct {width: 320px;}
+	.brand-wrap .brand {flex: 100% 0 0;}
 }
