@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery each</title>
+	<script src="../js/jquery-3.5.1.min.js"></script>
+	<style>
+		.box-wrap {display: flex; max-width: 1200px; margin: auto;}
+		.box {margin: 10px;}
+	</style>
+</head>
+<body>
+	<div class="box-wrap">
+		<div class="box" data-color="red" data-width="200" data-height="80"></div>
+		<div class="box" data-color="green" data-width="300" data-height="90"></div>
+		<div class="box" data-color="blue" data-width="50" data-height="130"></div>
+		<div class="box" data-color="yellow" data-width="80" data-height="50"></div>
+		<div class="box" data-color="#f90" data-width="120" data-height="200"></div>
+		<div class="box" data-color="pink" data-width="140" data-height="180"></div>
+	</div>
+	<script>
+		$(".box").each(function(i){
+			var color = $(this).data('color');
+			var width = $(this).data('width');
+			var height = $(this).data('height');
+			$(this).css({
+				"width": width+"px",
+				"height": height+"px",
+				"background-color": color
+			});
+		});
+	</script>
+</body>
+</html>

@@ -47,6 +47,20 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .star > i { color :#aaa;}
 .star > i.active {color: #ba7a2d;}
 
+.prd {user-select: none; background-color: #fff;}
+.prd .title-wrap {display: flex; justify-content: space-between; padding: 1em 0;}
+.prd .title-wrap .title {font-weight: bold;}
+.prd .choice-wrap {display: flex; margin: 0.5em 0;}
+.prd .choice-wrap .choice {width: 24px; height: 24px; border-radius: 50%; overflow: hidden; margin-right: 0.5em;}
+.prd .choice-wrap .choice.active {border: 2px solid #333;}
+.prd .content-wrap {font-weight: bold; margin: 1em 0;}
+.prd .price-wrap {font-weight: bold; margin: 1em 0; color: #ba7a2d;}
+.prd .star-wrap {margin: 1em 0; display: flex; justify-content: space-between; align-items: center;}
+.prd .star-wrap .bt-more {font-size: 0.75em; color: #777;}
+.prd .star > .mask {background-color: #fff;}
+
+
+
 /************ .header-wrapper *************/
 .header-wrapper {color: #333;}
 .header-wrapper .cart-cnt {background-color: #ba7a2d; color: #f9f9f9; font-size: 0.625em; position: absolute; bottom: -0.3em; left: 50%; transform: translateX(-50%); padding: 0.125em 0.25em; border-radius: 0.25em;}
@@ -196,15 +210,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .prd-wrapper .img-wrap:hover .img-front {opacity: 0;}
 .prd-wrapper .img-wrap > .img-front {position: absolute; top: 0; left: 0; transition: all 0.5s;}
 
-.prd-wrapper .title-wrap {display: flex; justify-content: space-between; padding: 1em 0;}
-.prd-wrapper .title-wrap .title {font-weight: bold;}
-.prd-wrapper .choice-wrap {display: flex; margin: 0.5em 0;}
-.prd-wrapper .choice-wrap .choice {width: 24px; height: 24px; border-radius: 50%; overflow: hidden; margin-right: 0.5em;}
-.prd-wrapper .choice-wrap .choice.active {border: 2px solid #333;}
-.prd-wrapper .content-wrap {font-weight: bold; margin: 1em 0;}
-.prd-wrapper .price-wrap {font-weight: bold; margin: 1em 0; color: #ba7a2d;}
-.prd-wrapper .star-wrap {margin: 1em 0; display: flex; justify-content: space-between; align-items: center;}
-.prd-wrapper .star-wrap .bt-more {font-size: 0.75em; color: #777;}
+
 
 /************ brand-wrapper *************/
 .brand-wrapper {margin: 3em 0;}
