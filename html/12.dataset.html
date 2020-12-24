@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DataSet을 알아보자</title>
+	<script src="../js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<div class="box" data-color="red" data-value='["A", "B"]' data-obj='{"name": "홍"}'></div>
+	<div class="box" data-color="blue" data-value='["C", "D"]' data-obj='{"name": "김"}'></div>
+	<script>
+		var color = [];
+		var value = [];
+		var jqObj = [];
+		var jsObj = [];
+		$('.box').each(function(i){
+			// color[i] = $(this).data('color');
+			// color.push($(this).data('color'));
+			// value.push($(this).data('value'));
+			jqObj.push($(this).data('obj'));
+			jsObj.push( this.dataset['obj'] );
+		});
+		console.log(jqObj[0].name);
+		console.log(JSON.parse(jsObj[0]).name);
+
+		var obj = { firstName: '길동', lastName: '홍' } // js object
+		var json = JSON.stringify(obj);
+		var obj2 = JSON.parse(json);
+
+		console.log(obj, json, obj2);
+	</script>
+</body>
+</html>

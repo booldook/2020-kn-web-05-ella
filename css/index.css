@@ -47,23 +47,40 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .star > i { color :#aaa;}
 .star > i.active {color: #ba7a2d;}
 
-.prd {user-select: none; background-color: #fff; padding: 0 1em;}
+.prd {user-select: none; background-color: #fff; padding: 0 1em; position: relative;}
 .prd .img-wrap {position: relative;}
 .prd .img-wrap:hover .img-front {opacity: 0;}
 .prd .img-wrap > .img-front {position: absolute; top: 0; left: 0; transition: all 0.5s; height: 100%;}
 .prd .img-wrap .bt-white {width: 70%; padding: 1.5em 0; left: 15%; bottom: 10%; position: absolute; box-shadow: none; opacity: 0; transition: all 0.3s;}
 .prd:hover .img-wrap .bt-white {opacity: 1;}
+.prd:hover .quick-wrap {opacity: .6;}
 .prd .title-wrap {display: flex; justify-content: space-between; padding: 1em 0;}
 .prd .title-wrap .title {font-weight: bold;}
 .prd .title-wrap .bt-like {cursor: pointer;}
 .prd .choice-wrap {display: flex; margin: 0.5em 0;}
-.prd .choice-wrap .choice {width: 50px; height: 50px; border-radius: 50%; overflow: hidden; margin-right: 0.5em; cursor: pointer; border: 2px solid #fff; transition: all 0.5s;}
-.prd .choice-wrap .choice.active {border: 2px solid #333;}
+.prd .choice-wrap .choice {position: relative; margin-right: 0.5em; cursor: pointer;}
+.prd .choice-wrap .choice > :first-child {width: 32px; height: 32px; border-radius: 50%; overflow: hidden;  border: 2px solid #fff; transition: all 0.5s;}
+.prd .choice-wrap .choice.active > :first-child {border: 2px solid #333;}
+.prd .choice-wrap .choice .popper {position: absolute; left: 50%; transform: translateX(-50%); background-color: #293356; color: #f9f9f9; font-size: 0.875em; font-weight: bold; z-index: 3; padding: 0.5em; top: -3em; opacity: 0; transition: all 0.3s; visibility: hidden;}
+.prd .choice-wrap .choice .popper::after {display: block; content: ""; width: 8px; height: 8px; transform: rotate(45deg) translateX(-50%); background-color: #293356; position: absolute; left: 50%; bottom: -6px;}
+
+.prd .choice-wrap .choice:hover .popper {opacity: 1; visibility: visible;}
+
 .prd .content-wrap {font-weight: bold; margin: 1em 0;}
 .prd .price-wrap {font-weight: bold; margin: 1em 0; color: #ba7a2d;}
 .prd .star-wrap {margin: 1em 0; display: flex; justify-content: space-between; align-items: center;}
 .prd .star-wrap .bt-more {font-size: 0.75em; color: #777;}
 .prd .star > .mask {background-color: #fff;}
+
+.prd .icon-wrap {position: absolute; z-index: 5; top: 1em; left: 2em; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; font-size: 0.875em;}
+.prd .discount {background-color: #ba7a2d; color: #f9f9f9; font-weight: bold; padding: 0.75em; margin-bottom: 0.5em; border-radius: 0.25em;}
+.prd .icon {color: #f9f9f9; font-weight: bold; padding: 0.75em; margin-bottom: 0.5em; border-radius: 0.25em;}
+
+.prd .quick-wrap {position: absolute; z-index: 5; top: 1em; right: 2em; padding: 0.75em; color: #f9f9f9; opacity: 0; background-color: #000; border-radius: 0.25em; font-size: 0.875em; cursor: pointer; display: flex; align-items: center; transition: all 0.3s; overflow: hidden;}
+.prd .quick-wrap i {display: inline-block;}
+.prd .quick-wrap span {display: inline-block; transition: all 0.3s; white-space: nowrap; position: absolute; opacity: 0; right: 0.75em;}
+.prd .quick-wrap:hover {padding-right: 6.5em;}
+.prd .quick-wrap:hover span {opacity: 1;}
 
 
 

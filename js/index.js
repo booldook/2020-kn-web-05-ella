@@ -8,8 +8,15 @@ function renderPrd() {
 	$('.prd').each(function(i){
 		var discount = $(this).data('discount');
 		var icon = $(this).data('icon');
-		var color = $(this).data('color');
-		console.log(discount, icon, color);
+		if(discount) {
+			$(this).find('.icon-wrap').append('<div class="discount">'+discount+'</div>');
+		}
+		if(icon && icon.length > 0) {
+			for(var i=0, html=''; i<icon.length; i++) {
+				html += '<div class="icon" style="background-color: '+icon[i].bg+';">'+icon[i].title+'</div>';
+			}
+			$(this).find('.icon-wrap').append(html);
+		}
 	});
 }
 
