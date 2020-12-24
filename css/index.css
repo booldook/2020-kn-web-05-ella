@@ -20,8 +20,9 @@ a:link, a:visited, a:active, a:hover {color: inherit; text-decoration: none;}
 .tl {text-align: left;}
 .tr {text-align: right;}
 
+.hover-line {display: inline-block;}
 .hover-line::after {display: block; content: ""; border-top: 1px solid #111; margin-top: 0.25em; transition: all 0.3s; transform: scaleX(0); transform-origin: left;}
-.hover-line:hover::after {transform: scaleX(1); transform-origin: right;}
+.hover-line:hover::after {transform: scaleX(1); /* transform-origin: right; */}
 
 .bold {font-weight: bold; cursor: pointer;}
 .bold:hover {color: #ba7a2d;}
@@ -41,7 +42,10 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 
 .title-link {color: #ba7a2d; text-transform: uppercase;}
 
-
+.star {padding: 0.5em 0; display: inline-block; position: relative; overflow: hidden;}
+.star > .mask {width: 100%; height: 100%; background-color: #eaeaea; position: absolute; top: 0; left: 0;}
+.star > i { color :#aaa;}
+.star > i.active {color: #ba7a2d;}
 
 /************ .header-wrapper *************/
 .header-wrapper {color: #333;}
@@ -129,10 +133,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .slide-wrapper .slide > .content-wrap {flex: 55% 0 0; background-color: #eaeaea;}
 .slide-wrapper .slide > .content-wrap > .title {font-weight: bold; padding: 1em 0;}
 .slide-wrapper .slide > .content-wrap > .summary {line-height: 1.5em; color: #555;}
-.slide-wrapper .slide > .content-wrap > .star {padding: 0.5em 0; display: inline-block; position: relative; overflow: hidden;}
-.slide-wrapper .slide > .content-wrap > .star > .mask {width: 100%; height: 100%; background-color: #eaeaea; position: absolute; top: 0; left: 0;}
-.slide-wrapper .slide > .content-wrap > .star > i { color :#aaa;}
-.slide-wrapper .slide > .content-wrap > .star > i.active {color: #ba7a2d;}
+
 .slide-wrapper .slide > .content-wrap > .content {color: #aaa;}
 .slide-wrapper .slide > .content-wrap > .content > .origin {color: #555;}
 .slide-wrapper .slide > .content-wrap > .price-sale {color: #ba7a2d; padding: 1em 0; font-weight: bold;}
@@ -187,7 +188,23 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 
 /************ best-wrapper *************/
 .best-wrapper {padding: 4em 0;}
+.prd-wrapper {}
+.prd-wrapper .prd-wrap {display: flex;}
+.prd-wrapper .prd-wrap .prd {width: 25%; flex-shrink: 0; flex-grow: 0;}
 
+.prd-wrapper .img-wrap {position: relative;}
+.prd-wrapper .img-wrap:hover .img-front {opacity: 0;}
+.prd-wrapper .img-wrap > .img-front {position: absolute; top: 0; left: 0; transition: all 0.5s;}
+
+.prd-wrapper .title-wrap {display: flex; justify-content: space-between; padding: 1em 0;}
+.prd-wrapper .title-wrap .title {font-weight: bold;}
+.prd-wrapper .choice-wrap {display: flex; margin: 0.5em 0;}
+.prd-wrapper .choice-wrap .choice {width: 24px; height: 24px; border-radius: 50%; overflow: hidden; margin-right: 0.5em;}
+.prd-wrapper .choice-wrap .choice.active {border: 2px solid #333;}
+.prd-wrapper .content-wrap {font-weight: bold; margin: 1em 0;}
+.prd-wrapper .price-wrap {font-weight: bold; margin: 1em 0; color: #ba7a2d;}
+.prd-wrapper .star-wrap {margin: 1em 0; display: flex; justify-content: space-between; align-items: center;}
+.prd-wrapper .star-wrap .bt-more {font-size: 0.75em; color: #777;}
 
 /************ brand-wrapper *************/
 .brand-wrapper {margin: 3em 0;}
