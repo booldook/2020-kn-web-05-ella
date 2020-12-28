@@ -272,8 +272,16 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .collection-wrap .bt-next {right: 0;}
 
 
-/* #e0e2ea
-#efe8e0 */
+/************ etc-wrapper *************/
+.etc-wrapper {display: flex; flex-wrap: wrap; text-align: center;}
+.etc-wrapper > div {flex: 50% 0 0; padding: 5% 10%; }
+.etc-wrapper > .tailer-wrap {background-color: #e0e2ea;}
+.etc-wrapper > .chat-wrap {background-color: #efe8e0;}
+.etc-wrapper .title {font-size: 1.75em; font-family: 'DM Serif Display', serif; margin: 1em 0;}
+.etc-wrapper .content {margin: 1.5em 0 3em 0; line-height: 1.75;}
+.etc-wrapper .hover-line {color: #ba7a2d; font-weight: bold;}
+.etc-wrapper .hover-line::after {border-color: #ba7a2d;}
+
 
 
 
@@ -343,6 +351,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 	.featured-wrap > img {max-height: auto; max-width: 100%;}
 	.featured-wrap .banner-wrap {width: 90%; position: static; margin: auto; transform: translateY(-40%);}
 	.featured-wrap .prd {width: 92%; max-width: 320px; margin: auto; position: relative; margin-top: -10%;}
+	.etc-wrapper > div {flex: 100% 0 0; padding: 10%;}
 }
 
 @media screen and (max-width: 575px) {
