@@ -217,6 +217,8 @@ $.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
 $.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
 $.get('../json/looking.json', onLooking);	// Looking 생성
 
+$.get('../json/prd.json', onPrd);	// prd banner 생성
+
 $(".navi-wrapper .navi").mouseenter(onNaviEnter);	// 메인네비
 $(".navi-wrapper .navi").mouseleave(onNaviLeave);	// 메인네비
 
@@ -225,12 +227,56 @@ $(".modal-container").click(onModalHide);
 $('.modal-wrapper').click(onModalWrapperClick);
 $('.modal-wrapper').find(".bt-close").click(onModalHide);
 
-
 renderStar();
 renderPrd();
 
 
 /********* 이벤트콜백 **********/
+
+function onPrd(r) {
+	for(var i=0, html=''; i<r.length; i++) {
+		html += '<li class="prd" data-discount="-11%" data-icon='[{"title": "NEW", "bg": "#293355"}, {"title": "BUNDLE", "bg": "#333"}]'>';
+		html += '<div class="icon-wrap"></div>';
+		html += '<div class="quick-wrap">';
+		html += '<i class="fa fa-eye"></i>';
+		html += '<span>Quick View</span>';
+		html += '</div>';
+		html += '<div class="img-wrap">';
+		html += '<img src="../img/pic1.jpg" alt="사진" class="w-100 img-front">';
+		html += '<img src="../img/pic2.jpg" alt="사진" class="w-100">';
+		html += '<a href="#" class="bt-white">ADD CART</a>';
+		html += '</div>';
+		html += '<div class="title-wrap">';
+		html += '<div class="title">MARC</div>';
+		html += '<i class="bt-like far fa-heart" onclick="$(this).addClass('fa').removeClass('far');"></i>';
+		html += '</div>';
+		html += '<ul class="choice-wrap">';
+		html += '<li class="choice active">';
+		html += '<img src="../img/image (12).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic1.jpg');">';
+		html += '</li>';
+		html += '<li class="choice">';
+		html += 'html += '<img src="../img/image (11).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic7.jpg');">';
+		html += '</li>';
+		html += '<li class="choice">';
+		html += '<img src="../img/image (10).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic5.jpg');">';
+		html += '</li>';
+		html += '</ul>';
+		html += '<div class="content-wrap">';
+		html += '<span class="content hover-line">Dinterdum pretium de condimentus</span>';
+		html += '<span> - </span>';
+		html += '<span class="color hover-line">white</span>';
+		html += '</div>';
+		html += '<div class="price-wrap">$189.00</div>';
+		html += '<div class="star-wrap">';
+		html += '<div class="star" data-score="4.6">';
+		html += '<i class="fa fa-star"></i>';
+		html += '<div class="mask"></div>';
+		html += '</div>';
+		html += '<a href="#" class="bt-more">MORE SIZES ABAILABLE</a>';
+		html += '</div>';
+		html += '</li>';
+	}
+}
 
 function onLooking(r) {
 	for(var i=0, html=''; i<r.length; i++) {
