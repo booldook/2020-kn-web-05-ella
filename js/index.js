@@ -227,16 +227,14 @@ $(".modal-container").click(onModalHide);
 $('.modal-wrapper').click(onModalWrapperClick);
 $('.modal-wrapper').find(".bt-close").click(onModalHide);
 
-renderStar();
-renderPrd();
 
 
 /********* 이벤트콜백 **********/
 
 function onPrd(r) {
 	for(var i=0, html=''; i<r.length; i++) {
-		html  = '<li class="prd" '; 
-		html += 'data-discount="'+r[i].discount || "" +'" ';
+		html  = '<li class="prd swiper-slide" '; 
+		html += 'data-discount="'+(r[i].discount || '')+'" ';
 		html += 'data-icon=\'[';
 		if(r[i].icon && r[i].icon.length > 0) {
 			for(var j=0; j<r[i].icon.length; j++) {
@@ -282,8 +280,16 @@ function onPrd(r) {
 		html += '</li>';
 		$(".prd-wrap").append(html);
 	}
-	renderStar();
-	renderPrd();
+	renderStar();	// star
+	renderPrd();	// discount
+	var swiper = new Swiper('.prd-wrapper.swiper-container', {
+		slidesPerView: 4,
+		loop: true,
+		navigation: {
+			nextEl: '.prd-wrapper .bt-next',
+			prevEl: '.prd-wrapper .bt-prev',
+		},
+	});
 }
 
 function onLooking(r) {

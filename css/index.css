@@ -80,7 +80,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .prd .quick-wrap i {display: inline-block;}
 .prd .quick-wrap span {display: inline-block; transition: all 0.3s; white-space: nowrap; position: absolute; opacity: 0; right: 0.75em;}
 .prd .quick-wrap:hover {padding-right: 6.5em;}
-.prd .quick-wrap:hover span {opacity: 1;}
+.prd .quick-wrap:hover span {opacity: 1;} 
 
 
 
@@ -225,10 +225,12 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 
 /************ best-wrapper *************/
 .best-wrapper {padding: 4em 0;}
-.prd-wrapper {margin-top: 3em;}
+.prd-wrapper {margin-top: 3em; position: relative;}
 .prd-wrapper .prd-wrap {display: flex;}
 .prd-wrapper .prd-wrap .prd {width: 25%; flex-shrink: 0; flex-grow: 0;}
-
+.prd-wrapper .bt {font-size: 4em; color: #f9f9f9; text-shadow: 0 0 0.25em rgba(0,0,0,0.5); position: absolute; top: calc(50% - 2em); z-index: 6; cursor: pointer;}
+.prd-wrapper .bt-prev {left: 0;}
+.prd-wrapper .bt-next {right: 0;}
 
 
 
