@@ -196,42 +196,7 @@ function closeDepth(n) {
 	$(".modal-navi .depth"+n).removeClass("active");
 }
 
-/********* 이벤트선언 **********/
-mainBanner();	// 배너세팅
-
-$(window).scroll(onScroll); // scroll spy
-$(window).resize(onResize).trigger("resize"); // el 높이, 폭, 위치
-
-$('.top-wrapper .icon-down').click(onLangChg); // 언어선택
-$('.trans-wrapper .bt-down').click(onLangSel); // 언어선택
-$('.trans-wrapper .trans-bg').click(onTransBg); // trans창 닫기
-$('.trans-wrapper .lang').click(onLangClick); // trans창 닫기
-
-$.get('../json/navi-new.json', onNaviNew);	// new release 생성
-$.get('../json/navi-best.json', onNaviBest);	// best sellers 생성
-$.get('../json/navi-sales.json', onNaviSales); // sales 생성
-$.get('../json/navi-men.json', onNaviMen); // Men 상품 가져오기
-$.get('../json/navi-women.json', onNaviWomen); // Women 상품 가져오기
-$.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
-
-$.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
-$.get('../json/looking.json', onLooking);	// Looking 생성
-
-$.get('../json/prd.json', onPrd);	// prd banner 생성
-
-$(".navi-wrapper .navi").mouseenter(onNaviEnter);	// 메인네비
-$(".navi-wrapper .navi").mouseleave(onNaviLeave);	// 메인네비
-
-$(".modal-trigger").click(onModalShow);
-$(".modal-container").click(onModalHide);
-$('.modal-wrapper').click(onModalWrapperClick);
-$('.modal-wrapper').find(".bt-close").click(onModalHide);
-
-
-
-/********* 이벤트콜백 **********/
-
-function onPrd(r) {
+function createPrd(r, el) {
 	for(var i=0, html=''; i<r.length; i++) {
 		html  = '<li class="prd swiper-slide" '; 
 		html += 'data-discount="'+(r[i].discount || '')+'" ';
@@ -278,10 +243,71 @@ function onPrd(r) {
 		html += '<a href="'+r[i].link+'" class="bt-more">MORE SIZES ABAILABLE</a>';
 		html += '</div>';
 		html += '</li>';
-		$(".prd-wrap").append(html);
+		$(el).append(html);
 	}
 	renderStar();	// star
 	renderPrd();	// discount
+}
+
+
+/********* 이벤트선언 **********/
+mainBanner();	// 배너세팅
+
+$(window).scroll(onScroll); // scroll spy
+$(window).resize(onResize).trigger("resize"); // el 높이, 폭, 위치
+
+$('.top-wrapper .icon-down').click(onLangChg); // 언어선택
+$('.trans-wrapper .bt-down').click(onLangSel); // 언어선택
+$('.trans-wrapper .trans-bg').click(onTransBg); // trans창 닫기
+$('.trans-wrapper .lang').click(onLangClick); // trans창 닫기
+
+$.get('../json/navi-new.json', onNaviNew);	// new release 생성
+$.get('../json/navi-best.json', onNaviBest);	// best sellers 생성
+$.get('../json/navi-sales.json', onNaviSales); // sales 생성
+$.get('../json/navi-men.json', onNaviMen); // Men 상품 가져오기
+$.get('../json/navi-women.json', onNaviWomen); // Women 상품 가져오기
+$.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
+
+$.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
+$.get('../json/looking.json', onLooking);	// Looking 생성
+
+$.get('../json/prd.json', onPrd);	// prd banner 생성
+$.get('../json/collection.json', onCollection);	// collection banner 생성
+
+$(".navi-wrapper .navi").mouseenter(onNaviEnter);	// 메인네비
+$(".navi-wrapper .navi").mouseleave(onNaviLeave);	// 메인네비
+
+$(".modal-trigger").click(onModalShow);
+$(".modal-container").click(onModalHide);
+$('.modal-wrapper').click(onModalWrapperClick);
+$('.modal-wrapper').find(".bt-close").click(onModalHide);
+
+
+
+/********* 이벤트콜백 **********/
+
+function onCollection(r) {
+	createPrd(r, '.collection-wrap .swiper-wrapper');
+	var swiper = new Swiper('.collection-wrap.swiper-container', {
+		slidesPerView: 1,
+		loop: true,
+		navigation: {
+			nextEl: '.collection-wrap .bt-next',
+			prevEl: '.collection-wrap .bt-prev',
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2
+			},
+			768: {
+				slidesPerView: 3
+			}
+		}
+	});
+}
+
+function onPrd(r) {
+	createPrd(r, '.prd-wrap');
 	var swiper = new Swiper('.prd-wrapper.swiper-container', {
 		slidesPerView: 1,
 		loop: true,
