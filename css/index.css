@@ -250,6 +250,12 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .member-wrapper .content {padding: 3em 0; color: #ccc; font-size: 0.925em;}
 .member-wrapper a {padding: 2em 6em; background-color: #fff; color: #293356; display: inline-block; font-weight: bold;}
 
+/************ featured-wrapper *************/
+.featured-wrapper {padding: 4em 0;}
+.featured-wrap {margin-top: 3em; position: relative; overflow: hidden;}
+.featured-wrap .prd {width: 274px; position: absolute; top: 2%; right: 0; box-shadow: 0 0 8px rgba(0,0,0,.3);}
+
+
 
 /************ 모달 *************/
 .modal-container {width: 100%; height: 100vh; position: fixed; top: 0; left: 0; background-color: rgba(0,0,0,.5); z-index: 999; transition: all 0.3s; opacity: 0; display: none;}
@@ -305,7 +311,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 }
 
 @media screen and (max-width: 991px) {
-
+	
 }
 
 @media screen and (max-width: 767px) {
