@@ -244,6 +244,13 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .brand-wrap .brand:hover img {transform: scale(1.1); opacity: .7;}
 
 
+/************ member-wrapper *************/
+.member-wrapper {background-color: #293356; text-align: center; color: #f9f9f9; padding: 4em 0;}
+.member-wrapper h3.title {font-size: 1.75em; font-family: 'DM Serif Display', serif;}
+.member-wrapper .content {padding: 3em 0; color: #ccc; font-size: 0.925em;}
+.member-wrapper a {padding: 2em 6em; background-color: #fff; color: #293356; display: inline-block; font-weight: bold;}
+
+
 /************ 모달 *************/
 .modal-container {width: 100%; height: 100vh; position: fixed; top: 0; left: 0; background-color: rgba(0,0,0,.5); z-index: 999; transition: all 0.3s; opacity: 0; display: none;}
 .modal-wrapper {background-color: #fff; position: absolute; transition: all 0.3s;}
