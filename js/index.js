@@ -235,7 +235,17 @@ renderPrd();
 
 function onPrd(r) {
 	for(var i=0, html=''; i<r.length; i++) {
-		html += '<li class="prd" data-discount="-11%" data-icon='[{"title": "NEW", "bg": "#293355"}, {"title": "BUNDLE", "bg": "#333"}]'>';
+		html  = '<li class="prd" '; 
+		if(r[i].discount) html += 'data-discount="'+r[i].discount+'" ';
+		html += 'data-icon=\'[';
+		if(r[i].icon && r[i].icon.length > 0) {
+			for(var j=0; j<r[i].icon.length; j++) {
+				html += '{"title": "'+r[i].icon[j].title+'", "bg": "'+r[i].icon[j].bg+'"},';
+			}
+			html = html.slice(0, -1);
+		}
+		html += ']\'>';
+		/*
 		html += '<div class="icon-wrap"></div>';
 		html += '<div class="quick-wrap">';
 		html += '<i class="fa fa-eye"></i>';
@@ -275,6 +285,8 @@ function onPrd(r) {
 		html += '<a href="#" class="bt-more">MORE SIZES ABAILABLE</a>';
 		html += '</div>';
 		html += '</li>';
+		*/
+		console.log(html);
 	}
 }
 
