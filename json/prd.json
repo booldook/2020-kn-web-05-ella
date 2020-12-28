@@ -14,13 +14,14 @@
 			{"thumb": "../img/image (10).jpg", "big": "../img/pic5.jpg"},
 			{"thumb": "../img/image (31).jpg", "big": "../img/pic11.jpg"}
 		],
+		"title": "MARC",
 		"content": "Dinterdum pretium de condimentus",
 		"color": "white",
 		"price": "$189.00",
 		"star": "4.6"
 	},
 	{
-		"discount": "-5%",
+		"discount": "",
 		"icon": [
 			{"title": "HOT", "bg": "pink"},
 			{"title": "NEW", "bg": "#293355"}
@@ -34,6 +35,7 @@
 			{"thumb": "../img/image (14).jpg", "big": "../img/pic8.jpg"},
 			{"thumb": "../img/image (15).jpg", "big": "../img/pic9.jpg"}
 		],
+		"title": "CHANEL",
 		"content": "Dinterdum pretium de condimentus",
 		"color": "pink",
 		"price": "$299.00",
@@ -51,6 +53,7 @@
 			{"thumb": "../img/image (15).jpg", "big": "../img/pic4.jpg"},
 			{"thumb": "../img/image (16).jpg", "big": "../img/pic5.jpg"}
 		],
+		"title": "G_STAR",
 		"content": "Dinterdum pretium de condimentus",
 		"color": "green",
 		"price": "$99.00",
@@ -70,6 +73,7 @@
 			{"thumb": "../img/image (18).jpg", "big": "../img/pic10.jpg"},
 			{"thumb": "../img/image (19).jpg", "big": "../img/pic11.jpg"}
 		],
+		"title": "BURBURY",
 		"content": "Dinterdum pretium de condimentus",
 		"color": "grey",
 		"price": "$399.00",
@@ -83,13 +87,14 @@
 		],
 		"link": "#",
 		"quickLink": "#",
-		"imgBack": "../img/pic7.jpg",
+		"imgBack": "../img/pic8.jpg",
 		"imgFront": [
 			{"thumb": "../img/image (19).jpg", "big": "../img/pic6.jpg"},
 			{"thumb": "../img/image (20).jpg", "big": "../img/pic7.jpg"},
 			{"thumb": "../img/image (31).jpg", "big": "../img/pic8.jpg"},
 			{"thumb": "../img/image (32).jpg", "big": "../img/pic9.jpg"}
 		],
+		"title": "GUCCI",
 		"content": "Dinterdum pretium de condimentus",
 		"color": "orange",
 		"price": "$119.00",
@@ -110,6 +115,7 @@
 			{"thumb": "../img/image (12).jpg", "big": "../img/pic4.jpg"},
 			{"thumb": "../img/image (13).jpg", "big": "../img/pic5.jpg"}
 		],
+		"title": "CHANEL",
 		"content": "Dinterdum pretium de condimentus",
 		"color": "black",
 		"price": "$99.00",
