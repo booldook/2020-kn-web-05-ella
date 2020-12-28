@@ -1,0 +1,118 @@
+[
+	{
+		"discount": "-11%",
+		"icon": [
+			{"title": "NEW", "bg": "#293355"},
+			{"title": "BUNDLE", "bg": "#333"}
+		],
+		"link": "#",
+		"quickLink": "#",
+		"imgBack": "../img/pic2.jpg",
+		"imgFront": [
+			{"thumb": "../img/image (12).jpg", "big": "../img/pic1.jpg"},
+			{"thumb": "../img/image (11).jpg", "big": "../img/pic7.jpg"},
+			{"thumb": "../img/image (10).jpg", "big": "../img/pic5.jpg"},
+			{"thumb": "../img/image (31).jpg", "big": "../img/pic11.jpg"}
+		],
+		"content": "Dinterdum pretium de condimentus",
+		"color": "white",
+		"price": "$189.00",
+		"star": "4.6"
+	},
+	{
+		"discount": "-5%",
+		"icon": [
+			{"title": "HOT", "bg": "pink"},
+			{"title": "NEW", "bg": "#293355"}
+		],
+		"link": "#",
+		"quickLink": "#",
+		"imgBack": "../img/pic5.jpg",
+		"imgFront": [
+			{"thumb": "../img/image (10).jpg", "big": "../img/pic6.jpg"},
+			{"thumb": "../img/image (13).jpg", "big": "../img/pic7.jpg"},
+			{"thumb": "../img/image (14).jpg", "big": "../img/pic8.jpg"},
+			{"thumb": "../img/image (15).jpg", "big": "../img/pic9.jpg"}
+		],
+		"content": "Dinterdum pretium de condimentus",
+		"color": "pink",
+		"price": "$299.00",
+		"star": "4.4"
+	},
+	{
+		"discount": "-20%",
+		"icon": [],
+		"link": "#",
+		"quickLink": "#",
+		"imgBack": "../img/pic1.jpg",
+		"imgFront": [
+			{"thumb": "../img/image (13).jpg", "big": "../img/pic2.jpg"},
+			{"thumb": "../img/image (14).jpg", "big": "../img/pic3.jpg"},
+			{"thumb": "../img/image (15).jpg", "big": "../img/pic4.jpg"},
+			{"thumb": "../img/image (16).jpg", "big": "../img/pic5.jpg"}
+		],
+		"content": "Dinterdum pretium de condimentus",
+		"color": "green",
+		"price": "$99.00",
+		"star": "4.1"
+	},
+	{
+		"discount": "-12%",
+		"icon": [
+			{"title": "NEW", "bg": "#293355"},
+			{"title": "BUNDLE", "bg": "#333"}
+		],
+		"link": "#",
+		"quickLink": "#",
+		"imgBack": "../img/pic8.jpg",
+		"imgFront": [
+			{"thumb": "../img/image (17).jpg", "big": "../img/pic9.jpg"},
+			{"thumb": "../img/image (18).jpg", "big": "../img/pic10.jpg"},
+			{"thumb": "../img/image (19).jpg", "big": "../img/pic11.jpg"}
+		],
+		"content": "Dinterdum pretium de condimentus",
+		"color": "grey",
+		"price": "$399.00",
+		"star": "4.8"
+	},
+	{
+		"discount": "-10%",
+		"icon": [
+			{"title": "NEW", "bg": "#293355"},
+			{"title": "HOT", "bg": "pink"}
+		],
+		"link": "#",
+		"quickLink": "#",
+		"imgBack": "../img/pic7.jpg",
+		"imgFront": [
+			{"thumb": "../img/image (19).jpg", "big": "../img/pic6.jpg"},
+			{"thumb": "../img/image (20).jpg", "big": "../img/pic7.jpg"},
+			{"thumb": "../img/image (31).jpg", "big": "../img/pic8.jpg"},
+			{"thumb": "../img/image (32).jpg", "big": "../img/pic9.jpg"}
+		],
+		"content": "Dinterdum pretium de condimentus",
+		"color": "orange",
+		"price": "$119.00",
+		"star": "3.9"
+	},
+	{
+		"discount": "-8%",
+		"icon": [
+			{"title": "NEW", "bg": "#293355"},
+			{"title": "BUNDLE", "bg": "#333"}
+		],
+		"link": "#",
+		"quickLink": "#",
+		"imgBack": "../img/pic11.jpg",
+		"imgFront": [
+			{"thumb": "../img/image (10).jpg", "big": "../img/pic2.jpg"},
+			{"thumb": "../img/image (11).jpg", "big": "../img/pic3.jpg"},
+			{"thumb": "../img/image (12).jpg", "big": "../img/pic4.jpg"},
+			{"thumb": "../img/image (13).jpg", "big": "../img/pic5.jpg"}
+		],
+		"content": "Dinterdum pretium de condimentus",
+		"color": "black",
+		"price": "$99.00",
+		"star": "4.6"
+	}
+]
