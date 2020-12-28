@@ -253,7 +253,13 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 /************ featured-wrapper *************/
 .featured-wrapper {padding: 4em 0;}
 .featured-wrap {margin-top: 3em; position: relative; overflow: hidden;}
+.featured-wrap > img {max-height: 100%;}
 .featured-wrap .prd {width: 274px; position: absolute; top: 2%; right: 0; box-shadow: 0 0 8px rgba(0,0,0,.3);}
+.featured-wrap .banner-wrap {position: absolute; left: 2%; bottom: 2%; padding: 0.5em; background-color: #fff;}
+.featured-wrap .banner-wrap .banner {border: 3px solid #bbb; padding: 1.5em;}
+.featured-wrap .banner-wrap .title {font-size: 3em; font-family: 'DM Serif Display', serif; margin-bottom: 0.5em; color: #222;}
+.featured-wrap .banner-wrap .content {margin-bottom: 2em;}
+.featured-wrap .banner-wrap .bts {display: flex; justify-content: space-between;}
 
 
 
@@ -318,6 +324,10 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 	.main-wrapper .pager-wrapper {font-size: 0.5em;}
 	.main-wrapper .slogan-wrapper {display: none;}
 	.looking-wrapper .spot-wrapper > .spot {flex: 33.3333% 0 0;}
+	.featured-wrap {overflow: visible;}
+	.featured-wrap > img {max-height: auto; max-width: 100%;}
+	.featured-wrap .banner-wrap {width: 90%; position: static; margin: auto; transform: translateY(-40%);}
+	.featured-wrap .prd {width: 92%; max-width: 320px; margin: auto; position: relative; margin-top: -10%;}
 }
 
 @media screen and (max-width: 575px) {
