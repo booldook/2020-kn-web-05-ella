@@ -8,6 +8,7 @@ function renderPrd() {
 	$('.prd').each(function(i){
 		var discount = $(this).data('discount');
 		var icon = $(this).data('icon');
+		$(this).find('.icon-wrap').empty();
 		if(discount) {
 			$(this).find('.icon-wrap').append('<div class="discount">'+discount+'</div>');
 		}
