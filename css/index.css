@@ -286,7 +286,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 
 /************ new-wrapper *************/
 .new-wrapper {padding: 6em 0; border-bottom: 1px solid #eaeaea;}
-.new-wrapper > .new-wrap {display: flex; align-items: center;}
+.new-wrapper > .new-wrap {display: flex; flex-wrap: wrap; align-items: center;}
 .new-wrap > div {flex: 50% 0 0; margin: 1em 0;}
 .new-wrapper > .new-wrap:last-child > .img-wrap {order: 1;}
 .new-wrapper .img-wrap  {background-color: #000; overflow: hidden; position: relative;}
@@ -297,6 +297,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .new-wrapper h3.title {font-size: 3.5em; font-family: 'DM Serif Display', serif; margin: 0.325em;}
 .new-wrapper p.content {line-height: 1.75; margin-bottom: 3em;}
 .new-wrapper a.bt-blue {width: 70%; margin: auto;}
+.new-wrapper .bt-youtube {padding: 1em 1.75em; background-color: rgba(0,0,0,0.7); border-radius: 0.5em; color: #fff; position: absolute; z-index: 3; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;}
 
 
 
@@ -368,6 +369,8 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 	.featured-wrap .banner-wrap {width: 90%; position: static; margin: auto; transform: translateY(-40%);}
 	.featured-wrap .prd {width: 92%; max-width: 320px; margin: auto; position: relative; margin-top: -10%;}
 	.etc-wrapper > div {flex: 100% 0 0; padding: 10%;}
+	.new-wrap > div {flex: 100% 0 0; font-size: 0.875em;}
+	.new-wrapper > .new-wrap:last-child > .img-wrap {order: -1;}
 }
 
 @media screen and (max-width: 575px) {
