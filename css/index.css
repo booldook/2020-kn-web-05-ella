@@ -325,10 +325,12 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 
 /************ footer-wrapper *************/
 .footer-wrapper {margin: 5em 0;}
-.footer-wrapper .footer-wrap {display: flex;}
-.footer-wrapper .footer-wrap > * {flex: 25% 0 0; padding-right: 1%;}
-.footer-wrapper .navi.title {margin: 4em 0 2.5em 0; font-weight: bold; font-size: 1.125em;}
-.footer-wrapper .navi {margin: 1.25em 0; font-size: 0.875em;}
+.footer-wrapper .footer-wrap {display: flex; flex-wrap: wrap;}
+.footer-wrapper .footer-wrap > div {flex: 25% 0 0; padding-right: 1%;}
+.footer-wrapper .navi.title {margin: 2.5em 0 1em 0; font-weight: bold; font-size: 1.125em; display: flex; justify-content: space-between; align-items: center;}
+.footer-wrapper .navi.title .bt-show {color: #999; cursor: pointer; transition: all 0.5s; display: none;}
+.footer-wrapper .navi.title .bt-show.active {transform: rotate(180deg);}
+.footer-wrapper .navi {padding: 0.75em 0; font-size: 0.875em;}
 .footer-wrapper .sns-wrap {display: flex; font-size: 1.25em;}
 .footer-wrapper .sns-wrap > .sns {margin-right: 1em;}
 .footer-wrapper .pay-wrap {display: flex; flex-wrap: wrap;}
@@ -410,6 +412,11 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 	.new-wrap > div {flex: 100% 0 0; font-size: 0.875em;}
 	.new-wrapper > .new-wrap:last-child > .img-wrap {order: -1;}
 	.insta-wrapper .insta-wrap .insta {flex: 48% 0 0;}
+	.footer-wrapper .footer-wrap {max-width: 500px;}
+	.footer-wrapper .footer-wrap > div {flex: 100% 0 0; padding-right: 2%; padding-left: 2%; border-bottom: 1px solid #eaeaea;}
+	.footer-wrapper .footer-wrap > div:not(:last-child) > ul {display: none;}
+	.footer-wrapper .navi.title {margin: 2em 0 0.75em 0;}
+	.footer-wrapper .navi.title .bt-show {display: block;}
 }
 
 @media screen and (max-width: 575px) {

@@ -283,9 +283,14 @@ $(".modal-container").click(onModalHide);
 $('.modal-wrapper').click(onModalWrapperClick);
 $('.modal-wrapper').find(".bt-close").click(onModalHide);
 
+$('.footer-wrapper .bt-show').click(onFooterClick);
 
 
 /********* 이벤트콜백 **********/
+function onFooterClick() {
+	$(this).toggleClass('active');
+	$(this).parent().next().stop().slideToggle(500);
+}
 
 function onCollection(r) {
 	createPrd(r, '.collection-wrap .swiper-wrapper');
@@ -375,6 +380,11 @@ function onResize(e) {
 	topHeight = $('.top-wrapper').outerHeight();
 	logoHeight = $('.logo-wrapper').outerHeight();
 	winWidth = $(window).width();
+
+	if(winWidth > 767) {
+		$(".footer-wrap > div > ul").attr("style", "");
+		$(".footer-wrap .bt-show").removeClass("active");
+	}
 }
 
 function onScroll(e) {
