@@ -6,7 +6,7 @@ font-family: 'Noto Sans', sans-serif;
 font-family: 'Overpass', sans-serif;
 */
 * {box-sizing: border-box;}
-html, body {font-family: 'Noto Sans', sans-serif; font-size: 14px; line-height: 0.95; height: 10000px;}
+html, body {font-family: 'Noto Sans', sans-serif; font-size: 14px; line-height: 0.95;}
 b, strong {font-weight: bold;}
 body.hide {padding-right: 17px; height: 100vh; overflow: hidden;}
 .wrapper {max-width: 1200px; margin: auto; overflow: hidden;}
@@ -322,6 +322,20 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .email-wrapper .email {display: flex; justify-content: space-between;}
 .email-wrapper .email > input {flex: 70% 0 0; border-radius: 0; border: none; background-color: #fff; padding: 1em;}
 .email-wrapper .email > button {flex: 28% 0 0;}
+
+/************ footer-wrapper *************/
+.footer-wrapper {margin: 5em 0;}
+.footer-wrapper .footer-wrap {display: flex;}
+.footer-wrapper .footer-wrap > * {flex: 25% 0 0; padding-right: 1%;}
+.footer-wrapper .navi.title {margin: 4em 0 2.5em 0; font-weight: bold; font-size: 1.125em;}
+.footer-wrapper .navi {margin: 1.25em 0; font-size: 0.875em;}
+.footer-wrapper .sns-wrap {display: flex; font-size: 1.25em;}
+.footer-wrapper .sns-wrap > .sns {margin-right: 1em;}
+.footer-wrapper .pay-wrap {display: flex; flex-wrap: wrap;}
+.footer-wrapper .pay {flex: 20% 0 0; padding: 0 5% 5% 0;}
+.footer-wrapper .copy-wrap {text-align: center; margin: 4em 0;}
+.footer-wrapper .copyright {margin: 1em 0;}
+
 
 
 
